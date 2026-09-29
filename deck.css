@@ -1,0 +1,180 @@
+:root {
+  --ic-blue: #00aeef;
+  --ic-navy: #10222c;
+  --ic-ink: #263238;
+  --ic-muted: #65727a;
+  --ic-soft: #f2f8fb;
+  --ic-line: #dcecf3;
+  --ic-green: #1c9b76;
+}
+
+.reveal { font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--ic-ink); }
+.reveal .slides { counter-reset: pitch-slide; }
+.reveal .slides > section { box-sizing: border-box; padding: 40px; text-align: left; }
+.reveal .slides > section:not(.cover):after { background: url('LOGO_05.png') center / contain no-repeat; content: ""; height: 80px; position: absolute; right: 0; top: 0; width: 80px; }
+.reveal .slides > section:not(.cover) { counter-increment: pitch-slide; }
+.content-wrapper { display: block; }
+.reveal h1, .reveal h2, .reveal h3, .reveal p { text-transform: none; }
+.reveal h1 { color: var(--ic-navy); font-size: 2.1em; margin: 0 0 .22em; }
+.reveal .slides > section:not(.cover) .content-wrapper > h2 { border-bottom: 3px solid var(--ic-blue); color: var(--ic-blue); display: inline-block; font-size: 1.3em; margin: 0 0 40px; padding-bottom: 10px; width: fit-content; }
+.reveal .slides > section:not(.cover) .content-wrapper > h2:before { background: var(--ic-blue); border-radius: 50px; color: white; content: counter(pitch-slide); display: inline-block; font-size: .5em; margin-right: 15px; padding: 4px 12px; vertical-align: middle; }
+.reveal h2 { color: var(--ic-navy); font-size: 1.3em; margin: 0 0 .68em; }
+.reveal h3 { color: var(--ic-navy); font-size: .68em; margin: 0 0 .45em; }
+.reveal p { font-size: .68em; line-height: 1.45; }
+.reveal ul { margin: .45em 0 0 .7em; }
+.reveal li { color: var(--ic-ink); font-size: .67em; line-height: 1.35; margin: .42em 0; }
+.reveal strong { color: var(--ic-navy); }
+.reveal section img { border: 0; box-shadow: none; background: none; }
+
+.cover { text-align: center !important; }
+.cover .mark { width: 250px; margin: 0 0 30px; }
+.cover .eyebrow, .eyebrow { color: var(--ic-blue); font-size: .46em; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+.cover .subtitle { color: var(--ic-blue); font-size: 1.5em; font-weight: 300; margin: 0 auto; max-width: 720px; }
+.cover .footer { color: #888; font-size: .6em; letter-spacing: 2px; margin-top: 100px; text-transform: uppercase; }
+
+.brand { display: none; }
+.kicker { color: var(--ic-muted); font-size: .52em; margin: -7px 0 22px; }
+.statement { border-left: 6px solid var(--ic-blue); color: var(--ic-navy); font-size: .88em; line-height: 1.35; margin: 24px 0 0; padding: 14px 22px; }
+.small { color: var(--ic-muted); font-size: .46em !important; }
+
+.grid-2, .grid-3, .grid-4 { display: grid; gap: 16px; }
+.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.card { background: var(--ic-soft); border-radius: 10px; padding: 20px; }
+.card p { font-size: .53em; margin: 0; }
+.card .icon { align-items: center; background: var(--ic-blue); border-radius: 50%; color: #fff; display: flex; font-size: .55em; font-weight: 700; height: 28px; justify-content: center; margin-bottom: 13px; width: 28px; }
+.card .number { color: var(--ic-blue); font-size: 1.2em; font-weight: 800; line-height: 1; margin-bottom: 9px; }
+
+.flow { align-items: stretch; display: grid; gap: 13px; grid-template-columns: repeat(3, 1fr); margin-top: 24px; }
+.flow-item { border: 1px solid var(--ic-line); border-radius: 10px; padding: 15px; position: relative; }
+.flow-item:not(:last-child):after { color: var(--ic-blue); content: "→"; font-size: .7em; position: absolute; right: -12px; top: 42%; z-index: 2; }
+.flow-item h3 { font-size: .63em; }
+.flow-item p { font-size: .48em; margin: 0; }
+
+.comparison { border-collapse: collapse; font-size: .52em; width: 100%; }
+.comparison th { background: var(--ic-navy); color: white; font-weight: 600; text-align: left; }
+.comparison th, .comparison td { border-bottom: 1px solid var(--ic-line); padding: 11px 13px; }
+.comparison td:not(:first-child) { text-align: center; }
+.check { color: var(--ic-green); font-weight: 800; }
+.no { color: #aeb9be; }
+
+.metric { border-left: 3px solid var(--ic-blue); padding: 5px 0 5px 15px; }
+.metric b { color: var(--ic-navy); display: block; font-size: .94em; }
+.metric span { color: var(--ic-muted); display: block; font-size: .42em; line-height: 1.25; }
+.placeholder { border: 1px dashed #8ccde3; border-radius: 8px; color: #36748a; font-size: .44em; line-height: 1.3; padding: 10px 12px; }
+
+.timeline { border-left: 2px solid var(--ic-line); margin: 25px 0 0 16px; padding-left: 30px; }
+.milestone { margin: 0 0 21px; position: relative; }
+.milestone:before { background: var(--ic-blue); border: 4px solid white; border-radius: 50%; box-shadow: 0 0 0 2px var(--ic-blue); content: ""; height: 8px; left: -37px; position: absolute; top: 4px; width: 8px; }
+.milestone h3 { margin-bottom: 4px; }
+.milestone p { font-size: .51em; margin: 0; }
+
+.team { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); margin-top: 20px; text-align: center; }
+.person { border-bottom: 4px solid var(--ic-blue); border-radius: 10px; padding: 14px; }
+.person img { border-radius: 50%; height: 104px; margin: 0 0 10px; object-fit: cover; width: 104px; }
+.person h3 { font-size: .64em; margin: 0; }
+.person p { color: var(--ic-muted); font-size: .44em; margin: 5px 0 0; }
+.cta { background: var(--ic-navy); border-radius: 16px; color: white; margin: 24px 0 0; padding: 24px 30px; }
+.cta h2, .cta p, .cta strong { color: white; }
+.cta h2 { font-size: 1.05em; margin-bottom: 10px; }
+.cta p { font-size: .57em; margin: 0; }
+.contact { color: var(--ic-muted); font-size: .5em; margin-top: 26px; text-align: center; }
+
+@media print { .reveal .slides section img { border: 0 !important; box-shadow: none !important; } }
+@media (max-width: 768px) and (orientation: portrait) {
+  .reveal .slides section { padding: 25px 23px; }
+  .reveal h1 { font-size: 1.35em; }
+  .reveal h2 { font-size: .84em; }
+  .reveal p { font-size: .54em; }
+  .reveal li { font-size: .51em; }
+  .brand { margin-bottom: 18px; }
+  .cover .mark { width: 140px; margin-bottom: 18px; }
+  .cover .subtitle { font-size: .62em; }
+  .cover .footer { margin-top: 42px; }
+  .grid-3, .grid-4 { gap: 8px; }
+  .card { padding: 10px; }
+  .card h3 { font-size: .45em; }
+  .card p { font-size: .35em; }
+  .comparison { font-size: .36em; }
+  .comparison th, .comparison td { padding: 7px 5px; }
+  .team { gap: 7px; }
+  .person { padding: 7px; }
+  .person img { height: 56px; width: 56px; }
+  .person h3 { font-size: .37em; }
+  .person p { font-size: .29em; }
+}
+
+/* Reveal.js mantém um palco próprio. Esta classe é aplicada pelo script das
+   apresentações para que a composição seja redesenhada — e não apenas reduzida
+   — em telefones no modo retrato. */
+html.mobile-layout .reveal .slides > section { padding: 28px 22px; }
+html.mobile-layout .reveal .slides > section:not(.cover):after { display: none; }
+html.mobile-layout .content-wrapper { max-width: 340px; }
+html.mobile-layout .reveal h1 { font-size: 1.45em; line-height: 1.1; }
+html.mobile-layout .reveal .slides > section:not(.cover) .content-wrapper > h2 { border-bottom-width: 2px; font-size: .82em; line-height: 1.12; margin: 0 0 22px; padding-bottom: 7px; }
+html.mobile-layout .reveal .slides > section:not(.cover) .content-wrapper > h2:before { margin-right: 8px; padding: 3px 8px; }
+html.mobile-layout .reveal h2 { font-size: .84em; line-height: 1.18; margin-bottom: .6em; }
+html.mobile-layout .reveal h3 { font-size: .56em; }
+html.mobile-layout .reveal p { font-size: .53em; line-height: 1.35; }
+html.mobile-layout .reveal li { font-size: .5em; line-height: 1.3; margin: .35em 0; }
+html.mobile-layout .brand { font-size: .36em; margin-bottom: 18px; }
+html.mobile-layout .kicker { font-size: .43em; margin-bottom: 15px; }
+html.mobile-layout .cover .mark { margin-bottom: 18px; width: 145px; }
+html.mobile-layout .cover .eyebrow { font-size: .37em; }
+html.mobile-layout .cover .subtitle { font-size: .68em; line-height: 1.25; }
+html.mobile-layout .cover .footer { font-size: .36em; margin-top: 46px; }
+html.mobile-layout .grid-2,
+html.mobile-layout .grid-3,
+html.mobile-layout .grid-4 { gap: 9px; grid-template-columns: 1fr; }
+html.mobile-layout .card { padding: 11px 13px; }
+html.mobile-layout .card .icon { font-size: .42em; height: 22px; margin-bottom: 7px; width: 22px; }
+html.mobile-layout .card .number { font-size: .75em; margin-bottom: 4px; }
+html.mobile-layout .card h3 { font-size: .52em; margin-bottom: 4px; }
+html.mobile-layout .card p { font-size: .43em; line-height: 1.27; }
+html.mobile-layout .statement { border-left-width: 4px; font-size: .62em; margin-top: 17px; padding: 10px 13px; }
+html.mobile-layout .flow { gap: 8px; grid-template-columns: 1fr; margin-top: 16px; }
+html.mobile-layout .flow-item { padding: 10px 13px; }
+html.mobile-layout .flow-item h3 { font-size: .52em; margin-bottom: 3px; }
+html.mobile-layout .flow-item p { font-size: .41em; }
+html.mobile-layout .flow-item:not(:last-child):after { bottom: -11px; content: "↓"; font-size: .55em; left: 50%; right: auto; top: auto; }
+html.mobile-layout .comparison { font-size: .35em; }
+html.mobile-layout .comparison th,
+html.mobile-layout .comparison td { padding: 7px 5px; }
+html.mobile-layout .timeline { margin: 16px 0 0 10px; padding-left: 24px; }
+html.mobile-layout .milestone { margin-bottom: 13px; }
+html.mobile-layout .milestone:before { left: -31px; }
+html.mobile-layout .milestone h3 { font-size: .52em; }
+html.mobile-layout .milestone p { font-size: .42em; }
+html.mobile-layout .placeholder { font-size: .38em; margin-top: 16px !important; padding: 8px 10px; }
+html.mobile-layout .team { gap: 7px; grid-template-columns: 1fr; margin-top: 13px; }
+html.mobile-layout .person { align-items: center; border-bottom-width: 3px; display: grid; grid-template-columns: 58px 1fr; column-gap: 12px; padding: 8px; text-align: left; }
+html.mobile-layout .person img { grid-row: 1 / span 2; height: 54px; margin: 0; width: 54px; }
+html.mobile-layout .person h3 { font-size: .5em; }
+html.mobile-layout .person p { font-size: .38em; margin: 3px 0 0; }
+html.mobile-layout .cta { border-radius: 10px; margin-top: 18px; padding: 16px 18px; }
+html.mobile-layout .cta h2 { font-size: .7em; margin-bottom: 6px; }
+html.mobile-layout .cta p { font-size: .46em; }
+html.mobile-layout .contact { font-size: .37em; line-height: 1.4; margin-top: 18px; }
+
+/* Slides com várias unidades de informação recebem uma composição compacta
+   no celular. Assim, a navegação continua sendo por slide, sem conteúdo
+   abaixo da área de 390 × 700 da apresentação. */
+html.mobile-layout .dense .content-wrapper > h2 { font-size: .7em; margin-bottom: 16px; padding-bottom: 6px; }
+html.mobile-layout .dense .grid-2,
+html.mobile-layout .dense .grid-3,
+html.mobile-layout .dense .grid-4 { gap: 6px; }
+html.mobile-layout .dense .card { padding: 8px 11px; }
+html.mobile-layout .dense .card .icon { display: none; }
+html.mobile-layout .dense .card .number { font-size: .62em; margin-bottom: 2px; }
+html.mobile-layout .dense .card h3 { font-size: .46em; margin-bottom: 2px; }
+html.mobile-layout .dense .card p { font-size: .36em; line-height: 1.2; }
+html.mobile-layout .dense ul { margin-top: .25em; }
+html.mobile-layout .dense li { font-size: .4em; line-height: 1.2; margin: .26em 0; }
+html.mobile-layout .dense .flow { gap: 6px; margin-top: 10px; }
+html.mobile-layout .dense .flow-item { padding: 7px 11px; }
+html.mobile-layout .dense .flow-item h3 { font-size: .46em; }
+html.mobile-layout .dense .flow-item p { font-size: .36em; line-height: 1.2; }
+html.mobile-layout .dense .statement { font-size: .51em; line-height: 1.25; margin-top: 11px; padding: 8px 11px; }
+html.mobile-layout .dense .placeholder { font-size: .34em; line-height: 1.2; margin-top: 10px !important; padding: 7px 9px; }
+}
