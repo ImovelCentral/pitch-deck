@@ -103,6 +103,218 @@
             margin-right: 15px;
         }
 
+        .infra-grid,
+        .team-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .infra-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            font-size: 0.7em;
+        }
+
+        .infra-card {
+            background: #f1f8ff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .team-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            text-align: center;
+        }
+
+        .team-card {
+            background: var(--light-grey);
+            padding: 20px;
+            border-radius: 15px;
+            border-bottom: 4px solid var(--brand-blue);
+        }
+
+        .contact-grid {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+        }
+
+        /* Layout de leitura para celulares em modo retrato. */
+        html.mobile-layout .reveal .slides section {
+            padding: 28px 22px;
+        }
+
+        html.mobile-layout .content-wrapper {
+            max-width: 340px;
+        }
+
+        html.mobile-layout .reveal h1 {
+            font-size: 1.45em;
+            line-height: 1.1;
+        }
+
+        html.mobile-layout .reveal h2 {
+            font-size: 0.82em;
+            line-height: 1.12;
+            margin: 0 0 22px;
+            padding-bottom: 7px;
+            border-bottom-width: 2px;
+        }
+
+        html.mobile-layout .reveal p {
+            font-size: 0.56em;
+            line-height: 1.35;
+            margin: 0 0 14px;
+        }
+
+        html.mobile-layout .reveal ul {
+            margin: 12px 0 0;
+            padding-left: 1em;
+        }
+
+        html.mobile-layout .reveal li {
+            font-size: 0.53em;
+            line-height: 1.3;
+            margin-bottom: 9px;
+        }
+
+        html.mobile-layout .logo-corner {
+            display: none;
+        }
+
+        html.mobile-layout .logo-main {
+            width: 145px;
+            margin-bottom: 18px;
+        }
+
+        html.mobile-layout .capa p[style*="font-size: 1.5em"] {
+            font-size: 0.68em !important;
+            line-height: 1.25;
+        }
+
+        html.mobile-layout .capa div[style*="margin-top: 100px"] {
+            margin-top: 46px !important;
+            font-size: 0.36em !important;
+            letter-spacing: 1.5px !important;
+        }
+
+        html.mobile-layout .highlight-box {
+            border-left-width: 5px;
+            padding: 14px 16px;
+            margin-top: 18px;
+            font-size: 0.56em;
+            line-height: 1.35;
+        }
+
+        html.mobile-layout .step-number {
+            padding: 3px 8px;
+            margin-right: 8px;
+        }
+
+        html.mobile-layout .infra-grid {
+            grid-template-columns: 1fr;
+            gap: 10px;
+            font-size: 0.57em !important;
+        }
+
+        html.mobile-layout .infra-card {
+            padding: 13px 15px;
+        }
+
+        html.mobile-layout .team-grid {
+            grid-template-columns: 1fr;
+            gap: 8px;
+        }
+
+        html.mobile-layout .team-card {
+            display: grid;
+            grid-template-columns: 64px minmax(0, 1fr);
+            column-gap: 12px;
+            align-items: center;
+            padding: 10px;
+            text-align: left !important;
+        }
+
+        html.mobile-layout .team-card > :not(img) {
+            min-width: 0;
+            overflow-wrap: anywhere;
+        }
+
+        html.mobile-layout .team-card img {
+            grid-row: 1 / span 3;
+            width: 64px !important;
+            height: 64px !important;
+            margin: 0 !important;
+        }
+
+        html.mobile-layout .team-card h3 {
+            font-size: 0.42em !important;
+            line-height: 1.1;
+        }
+
+        html.mobile-layout .team-card p {
+            font-size: 0.26em !important;
+            line-height: 1.2 !important;
+            margin: 3px 0 !important;
+        }
+
+        html.mobile-layout .team-intro {
+            font-size: 0.48em !important;
+            margin-bottom: 16px !important;
+        }
+
+        html.mobile-layout .contact-grid {
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 26px;
+        }
+
+        html.mobile-layout .capa .contact-grid p {
+            margin: 0;
+        }
+
+        html.mobile-layout .capa h1[style] {
+            font-size: 1.5em !important;
+        }
+
+        html.mobile-layout .capa p[style*="font-size: 1.2em"] {
+            font-size: 0.56em !important;
+            margin-bottom: 26px !important;
+        }
+
+        html.mobile-layout .capa > p,
+        html.mobile-layout .contact-grid {
+            max-width: 340px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* O palco do Reveal tem uma pequena área técnica fora da viewport.
+           Nas capas, que são centralizadas, compensamos isso explicitamente. */
+        html.mobile-layout .capa > * {
+            position: relative;
+            left: -20px;
+        }
+
+        html.mobile-layout .capa > h1,
+        html.mobile-layout .capa div[style*="margin-top: 100px"] {
+            max-width: 340px;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        html.mobile-layout .capa > h1:not([style]) {
+            font-size: 1.25em;
+        }
+
+        html.mobile-layout .contact-grid p[style*="font-size: 0.7em"] {
+            font-size: 0.48em !important;
+        }
+
+        html.mobile-layout .capa div[style*="margin-top: 80px"] {
+            display: none;
+        }
+
         /* Ajustes específicos para Impressão / PDF */
         @media print {
             .reveal section img {
@@ -221,13 +433,13 @@
                     <p style="font-size: 0.8em; margin-bottom: 10px;">Construído com a visão de expansão através da
                         <strong>Computação em Núvem</strong>:
                     </p>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 0.7em;">
-                        <div style="background: #f1f8ff; padding: 20px; border-radius: 10px;">
+                    <div class="infra-grid">
+                        <div class="infra-card">
                             <strong>Stack:</strong><br>
                             PHP Backend | React Frontend<br>
                             Python (Scraping) | MySQL
                         </div>
-                        <div style="background: #f1f8ff; padding: 20px; border-radius: 10px;">
+                        <div class="infra-card">
                             <strong>Vantagens:</strong><br>
                             Escalabilidade Horizontal<br>
                             Alta Disponibilidade<br>
@@ -334,13 +546,12 @@
                 <img src="LOGO_05.png" class="logo-corner">
                 <div class="content-wrapper">
                     <h2><span class="step-number">12</span>Equipe Imóvel Central</h2>
-                    <p style="font-size: 0.8em; margin-bottom: 30px;">Fundadores focados na transformação do mercado
+                    <p class="team-intro" style="font-size: 0.8em; margin-bottom: 30px;">Fundadores focados na transformação do mercado
                         imobiliário regional.</p>
 
-                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; text-align: center;">
+                    <div class="team-grid">
 
-                        <div
-                            style="background: var(--light-grey); padding: 20px; border-radius: 15px; border-bottom: 4px solid var(--brand-blue);">
+                        <div class="team-card">
                             <img src="Bruno.png" alt="Bruno Carazato"
                                 style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;">
                             <h3 style="font-size: 0.8em; margin: 0; color: var(--dark-grey);">Bruno Carazato</h3>
@@ -351,8 +562,7 @@
                                 Product Manager, Professor, Software Engineering Manager</p>
                         </div>
 
-                        <div
-                            style="background: var(--light-grey); padding: 20px; border-radius: 15px; border-bottom: 4px solid var(--brand-blue);">
+                        <div class="team-card">
                             <img src="Joao.png" alt="João Lucas Buzzo"
                                 style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;">
                             <h3 style="font-size: 0.8em; margin: 0; color: var(--dark-grey);">João Lucas Buzzo</h3>
@@ -363,8 +573,7 @@
                                 Software Engineer</p>
                         </div>
 
-                        <div
-                            style="background: var(--light-grey); padding: 20px; border-radius: 15px; border-bottom: 4px solid var(--brand-blue);">
+                        <div class="team-card">
                             <img src="Luis.png" alt="Luis Felipe dos Santos"
                                 style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;">
                             <h3 style="font-size: 0.8em; margin: 0; color: var(--dark-grey);">Luis F. dos Santos
@@ -386,7 +595,7 @@
                     Estamos prontos para transformar o mercado imobiliário regional.
                 </p>
 
-                <div style="display: flex; justify-content: center; gap: 50px; margin-top: 40px;">
+                <div class="contact-grid">
                     <div style="text-align: center;">
                         <p
                             style="font-size: 0.5em; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">
@@ -418,12 +627,34 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.js"></script>
     <script>
+        const mobileViewport = window.matchMedia('(max-width: 768px) and (orientation: portrait)');
+
+        function updatePresentationLayout() {
+            const isMobile = mobileViewport.matches;
+            document.documentElement.classList.toggle('mobile-layout', isMobile);
+
+            Reveal.configure({
+                width: isMobile ? 390 : 960,
+                height: 700,
+                margin: isMobile ? 0 : 0.1
+            });
+            Reveal.layout();
+        }
+
+        document.documentElement.classList.toggle('mobile-layout', mobileViewport.matches);
+
         Reveal.initialize({
             hash: true,
             center: true,
             transition: 'fade',
-            margin: 0.1
+            margin: mobileViewport.matches ? 0 : 0.1,
+            width: mobileViewport.matches ? 390 : 960,
+            height: 700,
+            touch: true
         });
+
+        Reveal.on('ready', updatePresentationLayout);
+        mobileViewport.addEventListener('change', updatePresentationLayout);
     </script>
 </body>
 
