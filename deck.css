@@ -81,6 +81,23 @@
 .cta p { font-size: .57em; margin: 0; }
 .contact { color: var(--ic-muted); font-size: .5em; margin-top: 26px; text-align: center; }
 
+/* As capas mantêm respiro no desktop sem ultrapassar o palco do Reveal.js. */
+@media (min-width: 769px) {
+  .cover .mark { margin-bottom: 20px; width: 200px; }
+  .cover h1 { font-size: 1.8em; }
+  .cover .subtitle { font-size: 1.2em; }
+  .cover .footer { margin-top: 50px; }
+  .cover .contact { font-size: .44em; margin-top: 16px; }
+  .business-model .placeholder { margin-top: 12px !important; }
+  .partner-product .statement { margin-top: 4px; }
+}
+
+/* No desktop, o título longo da tese ocupa quatro linhas no tamanho padrão.
+   Esta variação preserva espaço para a conclusão dentro do palco do slide. */
+@media (min-width: 769px) {
+  .reveal .slides > section.thesis .content-wrapper > h2 { font-size: 1.1em; margin-bottom: 28px; }
+}
+
 @media print { .reveal .slides section img { border: 0 !important; box-shadow: none !important; } }
 @media (max-width: 768px) and (orientation: portrait) {
   .reveal .slides section { padding: 25px 23px; }
@@ -177,4 +194,10 @@ html.mobile-layout .dense .flow-item h3 { font-size: .46em; }
 html.mobile-layout .dense .flow-item p { font-size: .36em; line-height: 1.2; }
 html.mobile-layout .dense .statement { font-size: .51em; line-height: 1.25; margin-top: 11px; padding: 8px 11px; }
 html.mobile-layout .dense .placeholder { font-size: .34em; line-height: 1.2; margin-top: 10px !important; padding: 7px 9px; }
+
+@media (max-width: 768px) and (orientation: portrait) {
+  html.mobile-layout .reveal .slides > section.business-model .content-wrapper > h2,
+  html.mobile-layout .reveal .slides > section.partner-product .content-wrapper > h2 { font-size: .62em; margin-bottom: 12px; }
+  html.mobile-layout .partner-product li { font-size: .38em; }
+  html.mobile-layout .partner-product .statement { font-size: .48em; margin-top: 4px; padding: 8px 10px; }
 }
