@@ -81,6 +81,13 @@
 .cta p { font-size: .57em; margin: 0; }
 .contact { color: var(--ic-muted); font-size: .5em; margin-top: 26px; text-align: center; }
 
+/* Link de retorno à apresentação inicial. Fica fora do palco do Reveal.js,
+   no canto superior esquerdo, para não interferir na navegação por slides. */
+.back-home { align-items: center; background: rgba(255, 255, 255, .92); border: 1px solid var(--ic-line); border-radius: 50px; box-shadow: 0 2px 10px rgba(16, 34, 44, .08); color: var(--ic-blue); display: inline-flex; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 600; gap: 6px; left: 14px; padding: 7px 14px; position: fixed; text-decoration: none; top: 14px; z-index: 60; }
+.back-home:hover { background: var(--ic-blue); border-color: var(--ic-blue); color: #fff; }
+.back-home:focus-visible { outline: 2px solid var(--ic-navy); outline-offset: 2px; }
+@media print { .back-home { display: none !important; } }
+
 /* As capas mantêm respiro no desktop sem ultrapassar o palco do Reveal.js. */
 @media (min-width: 769px) {
   .cover .mark { margin-bottom: 20px; width: 200px; }

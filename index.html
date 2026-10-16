@@ -1,661 +1,225 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imóvel Central | Google for Startups</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/white.min.css">
-    <style>
-        :root {
-            --brand-blue: #00aeef;
-            --dark-grey: #202124;
-            --light-grey: #f8f9fa;
-        }
-
-        .reveal {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        }
-
-        .reveal h1,
-        .reveal h2,
-        .reveal h3 {
-            color: var(--dark-grey);
-            text-transform: none;
-            font-weight: 700;
-            border: none;
-        }
-
-        .reveal h2 {
-            color: var(--brand-blue);
-            border-bottom: 3px solid var(--brand-blue);
-            display: inline-block;
-            margin-bottom: 40px;
-            padding-bottom: 10px;
-        }
-
-        /* Reset de bordas para imagens - Evita borda preta na impressão */
-        .reveal section img {
-            border: none !important;
-            box-shadow: none !important;
-            background: none !important;
-            outline: none !important;
-        }
-
-        .reveal .slides section {
-            text-align: left;
-            padding: 40px;
-        }
-
-        .content-wrapper {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            height: 100%;
-        }
-
-        ul {
-            margin-top: 20px;
-        }
-
-        li {
-            margin-bottom: 15px;
-            color: #444;
-            font-size: 0.85em;
-        }
-
-        .capa {
-            text-align: center !important;
-        }
-
-        .logo-main {
-            width: 250px;
-            margin-bottom: 30px;
-            border: none !important;
-            box-shadow: none !important;
-        }
-
-        .logo-corner {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 80px;
-            border: none !important;
-            box-shadow: none !important;
-        }
-
-        .highlight-box {
-            background: var(--light-grey);
-            border-left: 8px solid var(--brand-blue);
-            padding: 20px 30px;
-            margin-top: 30px;
-            font-style: italic;
-        }
-
-        .step-number {
-            font-size: 0.5em;
-            vertical-align: middle;
-            background: var(--brand-blue);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 50px;
-            margin-right: 15px;
-        }
-
-        .infra-grid,
-        .team-grid {
-            display: grid;
-            gap: 20px;
-        }
-
-        .infra-grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            font-size: 0.7em;
-        }
-
-        .infra-card {
-            background: #f1f8ff;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .team-grid {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            text-align: center;
-        }
-
-        .team-card {
-            background: var(--light-grey);
-            padding: 20px;
-            border-radius: 15px;
-            border-bottom: 4px solid var(--brand-blue);
-        }
-
-        .contact-grid {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            margin-top: 40px;
-        }
-
-        /* Layout de leitura para celulares em modo retrato. */
-        html.mobile-layout .reveal .slides section {
-            padding: 28px 22px;
-        }
-
-        html.mobile-layout .content-wrapper {
-            max-width: 340px;
-        }
-
-        html.mobile-layout .reveal h1 {
-            font-size: 1.45em;
-            line-height: 1.1;
-        }
-
-        html.mobile-layout .reveal h2 {
-            font-size: 0.82em;
-            line-height: 1.12;
-            margin: 0 0 22px;
-            padding-bottom: 7px;
-            border-bottom-width: 2px;
-        }
-
-        html.mobile-layout .reveal p {
-            font-size: 0.56em;
-            line-height: 1.35;
-            margin: 0 0 14px;
-        }
-
-        html.mobile-layout .reveal ul {
-            margin: 12px 0 0;
-            padding-left: 1em;
-        }
-
-        html.mobile-layout .reveal li {
-            font-size: 0.53em;
-            line-height: 1.3;
-            margin-bottom: 9px;
-        }
-
-        html.mobile-layout .logo-corner {
-            display: none;
-        }
-
-        html.mobile-layout .logo-main {
-            width: 145px;
-            margin-bottom: 18px;
-        }
-
-        html.mobile-layout .capa p[style*="font-size: 1.5em"] {
-            font-size: 0.68em !important;
-            line-height: 1.25;
-        }
-
-        html.mobile-layout .capa div[style*="margin-top: 100px"] {
-            margin-top: 46px !important;
-            font-size: 0.36em !important;
-            letter-spacing: 1.5px !important;
-        }
-
-        html.mobile-layout .highlight-box {
-            border-left-width: 5px;
-            padding: 14px 16px;
-            margin-top: 18px;
-            font-size: 0.56em;
-            line-height: 1.35;
-        }
-
-        html.mobile-layout .step-number {
-            padding: 3px 8px;
-            margin-right: 8px;
-        }
-
-        html.mobile-layout .infra-grid {
-            grid-template-columns: 1fr;
-            gap: 10px;
-            font-size: 0.57em !important;
-        }
-
-        html.mobile-layout .infra-card {
-            padding: 13px 15px;
-        }
-
-        html.mobile-layout .team-grid {
-            grid-template-columns: 1fr;
-            gap: 8px;
-        }
-
-        html.mobile-layout .team-card {
-            display: grid;
-            grid-template-columns: 64px minmax(0, 1fr);
-            column-gap: 12px;
-            align-items: center;
-            padding: 10px;
-            text-align: left !important;
-        }
-
-        html.mobile-layout .team-card > :not(img) {
-            min-width: 0;
-            overflow-wrap: anywhere;
-        }
-
-        html.mobile-layout .team-card img {
-            grid-row: 1 / span 3;
-            width: 64px !important;
-            height: 64px !important;
-            margin: 0 !important;
-        }
-
-        html.mobile-layout .team-card h3 {
-            font-size: 0.42em !important;
-            line-height: 1.1;
-        }
-
-        html.mobile-layout .team-card p {
-            font-size: 0.26em !important;
-            line-height: 1.2 !important;
-            margin: 3px 0 !important;
-        }
-
-        html.mobile-layout .team-intro {
-            font-size: 0.48em !important;
-            margin-bottom: 16px !important;
-        }
-
-        html.mobile-layout .contact-grid {
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 26px;
-        }
-
-        html.mobile-layout .capa .contact-grid p {
-            margin: 0;
-        }
-
-        html.mobile-layout .capa h1[style] {
-            font-size: 1.5em !important;
-        }
-
-        html.mobile-layout .capa p[style*="font-size: 1.2em"] {
-            font-size: 0.56em !important;
-            margin-bottom: 26px !important;
-        }
-
-        html.mobile-layout .capa > p,
-        html.mobile-layout .contact-grid {
-            max-width: 340px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* O palco do Reveal tem uma pequena área técnica fora da viewport.
-           Nas capas, que são centralizadas, compensamos isso explicitamente. */
-        html.mobile-layout .capa > * {
-            position: relative;
-            left: -20px;
-        }
-
-        html.mobile-layout .capa > h1,
-        html.mobile-layout .capa div[style*="margin-top: 100px"] {
-            max-width: 340px;
-            margin-left: auto !important;
-            margin-right: auto !important;
-        }
-
-        html.mobile-layout .capa > h1:not([style]) {
-            font-size: 1.25em;
-        }
-
-        html.mobile-layout .contact-grid p[style*="font-size: 0.7em"] {
-            font-size: 0.48em !important;
-        }
-
-        html.mobile-layout .capa div[style*="margin-top: 80px"] {
-            display: none;
-        }
-
-        /* Ajustes específicos para Impressão / PDF */
-        @media print {
-            .reveal section img {
-                border: none !important;
-                box-shadow: none !important;
-            }
-
-            .logo-corner {
-                width: 60px !important;
-            }
-
-            /* Esconde as notas do orador */
-            .reveal .speaker-notes,
-            .reveal .speaker-notes-pdf,
-            .reveal .speaker-notes-container {
-                display: none !important;
-            }
-
-            /* Garante que os slides ocupem a página toda corretamente */
-            .reveal .pdf-page {
-                box-shadow: none !important;
-                background: transparent !important;
-            }
-
-            /* AJUSTES DA EQUIPE NA IMPRESSÃO */
-            .reveal .slides section div[style*="grid-template-columns"]>div {
-                break-inside: avoid !important;
-                /* Impede quebrar o membro da equipe entre páginas */
-                page-break-inside: avoid !important;
-            }
-
-            .reveal .slides section p[style*="font-size: small"] {
-                font-size: 8px !important;
-                /* Força o texto dos cargos a ficar bem pequeno */
-                line-height: 1.1 !important;
-            }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imóvel Central | Hub Inteligente de Negócios Imobiliários</title>
+  <meta name="description" content="Imóvel Central é o hub regional de negócios imobiliários: centraliza a oferta da região e conecta compradores, investidores e profissionais. Conheça as apresentações por perfil.">
+  <link rel="icon" href="LOGO_05.png">
+  <link rel="stylesheet" href="landing.css">
 </head>
-
 <body>
-    <div class="reveal">
-        <div class="slides">
 
-            <section class="capa" data-background="white">
-                <img src="LOGO_05.png" alt="Logo" class="logo-main">
-                <h1>Imóvel Central</h1>
-                <p style="color: var(--brand-blue); font-size: 1.5em; font-weight: 300;">Hub Inteligente de Negócios
-                    Imobiliários</p>
-                <div style="margin-top: 100px; font-size: 0.6em; color: #888; letter-spacing: 2px;">
-                    APRESENTAÇÃO • GOOGLE FOR STARTUPS
-                </div>
-            </section>
-
-            <section>
-                <img src="LOGO_05.png" class="logo-corner">
-                <div class="content-wrapper">
-                    <h2><span class="step-number">1</span>A Origem</h2>
-                    <p>A Imóvel Central nasceu de uma dor real enfrentada por pessoas comuns:</p>
-                    <ul>
-                        <li>Informações desencontradas e anúncios duplicados.</li>
-                        <li>Falta de padronização e atendimento lento.</li>
-                        <li>Processos pouco transparentes.</li>
-                    </ul>
-                    <div class="highlight-box">
-                        "O problema não era falta de imóveis. Era falta de organização, inteligência e centralização."
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <img src="LOGO_05.png" class="logo-corner">
-                <div class="content-wrapper">
-                    <h2><span class="step-number">2</span>O Problema</h2>
-                    <ul>
-                        <li><strong>Fragmentação:</strong> Mercado regional altamente desorganizado.</li>
-                        <li><strong>Analógico:</strong> Imobiliárias e corretores com baixa digitalização.</li>
-                        <li><strong>Decisão no escuro:</strong> Falta de dados estruturados para compradores e
-                            investidores.</li>
-                        <li><strong>Subatendimento:</strong> Cidades médias ignoradas pelas grandes soluções nacionais.
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <section>
-                <img src="LOGO_05.png" class="logo-corner">
-                <div class="content-wrapper">
-                    <h2><span class="step-number">3</span>A Solução: Plataforma</h2>
-                    <p>Um hub digital que conecta Compradores, Locatários, Imobiliárias e Corretores através de:</p>
-                    <ul>
-                        <li><strong>Centralização:</strong> Oferta e demanda em um único lugar.</li>
-                        <li><strong>Matching Automático:</strong> Algoritmo entre perfil e imóvel.</li>
-                        <li><strong>Digitalização Local:</strong> Transformando o mercado imobiliário da região,
-                            impulsionando a operação de imobiliárias e corretores autônomos através da tecnologia.</li>
-                    </ul>
-                </div>
-            </section>
-            <section>
-                <img src="LOGO_05.png" class="logo-corner">
-                <div class="content-wrapper">
-                    <h2><span class="step-number">3.1</span>A Solução: Inteligência e Rede</h2>
-                    <p>Um hub digital que conecta Compradores, Locatários, Imobiliárias e Corretores através de:</p>
-                    <ul>
-                        <li><strong>Expansão da Captação e Oportunidade Social:</strong> Habilitando pessoas comuns a
-                            serem captadores imobiliários em associação a outros corretores.</li>
-                        <li><strong>Inteligência de Mercado:</strong> Fornecendo dados e análises para tomada de
-                            decisão estratégica.</li>
-                    </ul>
-                </div>
-            </section>
-            <section>
-                <img src="LOGO_05.png" class="logo-corner">
-                <div class="content-wrapper">
-                    <h2><span class="step-number">4</span>Infraestrutura Cloud</h2>
-                    <p style="font-size: 0.8em; margin-bottom: 10px;">Construído com a visão de expansão através da
-                            <strong>Computação em Nuvem</strong>:
-                    </p>
-                    <div class="infra-grid">
-                        <div class="infra-card">
-                            <strong>Stack:</strong><br>
-                            PHP Backend | React Frontend<br>
-                            Python (Scraping) | MySQL
-                        </div>
-                        <div class="infra-card">
-                            <strong>Vantagens:</strong><br>
-                            Escalabilidade Horizontal<br>
-                            Alta Disponibilidade<br>
-                            Segurança
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <img src="LOGO_05.png" class="logo-corner">
-                <div class="content-wrapper">
-                    <h2><span class="step-number">5</span>Inteligência Artificial</h2>
-                    <ul>
-                        <li><strong>IA Generativa:</strong> Descrições persuasivas.</li>
-                        <li><strong>Sistema de Recomendação:</strong> Sugestões baseadas em comportamento.</li>
-                        <li><strong>Matching Inteligente:</strong> Cruzamento de perfil, preço e região em tempo real.
-                        </li>
-                        <li><strong>Atendimento Personalizado:</strong> Buscas personalizadas para compradores e
-                            locatários.
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <section>
-                <img src="LOGO_05.png" class="logo-corner">
-                <div class="content-wrapper">
-                    <h2><span class="step-number">6</span>Dashboard Regional</h2>
-                    <ul>
-                        <li>Volume de oferta por bairro e média de preços.</li>
-                        <li>Tempo médio de fechamento e tendências locais.</li>
-                        <li><strong>Integração BigQuery:</strong> Análise de mercado regional em escala.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section>
-                <img src="LOGO_05.png" class="logo-corner">
-                <div class="content-wrapper">
-                    <h2><span class="step-number">7</span>Modelo de Negócio</h2>
-                    <div style="font-size: 0.75em;">
-                        <p>• <strong>Fase 1:</strong> Crescimento e validação (Gratuito).</p>
-                        <p>• <strong>Fase 2:</strong> Destaques B2B e anúncios estratégicos.</p>
-                        <p>• <strong>Fase 3:</strong> SaaS Imobiliário (CRM e Automação).</p>
-                        <p>• <strong>Fase 4:</strong> Intermediação e comissão por transação.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <img src="LOGO_05.png" class="logo-corner">
-                <div class="content-wrapper">
-                    <h2><span class="step-number">8</span>Mercado</h2>
-                    <ul>
-                        <li><strong>Região inicial:</strong> Assis, Tarumã, Cândido Mota, Palmital, Paraguaçu.</li>
-                        <li><strong>Expansão:</strong> Ourinhos (SP), Marília (SP), Londrina (PR) e demais regiões do
-                            interior do Brasil.</li>
-                        <li><strong>Oportunidade:</strong> Mercado de alto volume com baixíssima digitalização regional.
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <section>
-                <img src="LOGO_05.png" class="logo-corner">
-                <div class="content-wrapper">
-                    <h2><span class="step-number">9</span>Vantagem Competitiva</h2>
-                    <ul>
-                        <li>Foco regional estratégico (Cidades Médias).</li>
-                        <li>Tecnologia escalável e IA aplicada desde o início.</li>
-                        <li>Modelo híbrido: marketplace + SaaS + intermediação.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section>
-                <img src="LOGO_05.png" class="logo-corner">
-                <div class="content-wrapper">
-                    <h2><span class="step-number">10</span>Por que Google for Startups?</h2>
-                    <ul>
-                        <li>Acesso à possibilidade de uso de <strong>Vertex AI</strong> e <strong>BigQuery</strong>.</li>
-                        <li>Arquitetura cloud-native em Google Cloud.</li>
-                        <li>Aceleração de maturidade tecnológica e dados.</li>
-                        <li>Mentoria para acelerar produto, dados e estratégia de crescimento.</li>
-                        <li>Conexão com um ecossistema global de startups.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section>
-                <img src="LOGO_05.png" class="logo-corner">
-                <div class="content-wrapper">
-                    <h2><span class="step-number">11</span>Visão</h2>
-                    <p style="font-size: 1.2em;">Ser o principal <strong>hub imobiliário regional</strong> do Brasil.
-                    </p>
-                    <div class="highlight-box">
-                        "Transformando um mercado fragmentado em um ecossistema inteligente, conectado e orientado por
-                        dados."
-                    </div>
-                </div>
-            </section>
-            <section>
-                <img src="LOGO_05.png" class="logo-corner">
-                <div class="content-wrapper">
-                    <h2><span class="step-number">12</span>Equipe Imóvel Central</h2>
-                    <p class="team-intro" style="font-size: 0.8em; margin-bottom: 30px;">Fundadores focados na transformação do mercado
-                        imobiliário regional.</p>
-
-                    <div class="team-grid">
-
-                        <div class="team-card">
-                            <img src="Bruno.png" alt="Bruno Carazato"
-                                style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;">
-                            <h3 style="font-size: 0.8em; margin: 0; color: var(--dark-grey);">Bruno Carazato</h3>
-                            <p
-                                style="font-size: 0.5em; color: var(--brand-blue); font-weight: bold; text-transform: uppercase; margin-top: 5px;">
-                                Founder</p>
-                            <p style="color: var(--brand-blue); text-transform: uppercase; font-size: small;">
-                                Product Manager, Professor, Software Engineering Manager</p>
-                        </div>
-
-                        <div class="team-card">
-                            <img src="Joao.png" alt="João Lucas Buzzo"
-                                style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;">
-                            <h3 style="font-size: 0.8em; margin: 0; color: var(--dark-grey);">João Lucas Buzzo</h3>
-                            <p
-                                style="font-size: 0.5em; color: var(--brand-blue); font-weight: bold; text-transform: uppercase; margin-top: 5px;">
-                                Cofounder</p>
-                            <p style="color: var(--brand-blue); text-transform: uppercase; font-size: small;">
-                                Software Engineer</p>
-                        </div>
-
-                        <div class="team-card">
-                            <img src="Luis.png" alt="Luis Felipe dos Santos"
-                                style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;">
-                            <h3 style="font-size: 0.8em; margin: 0; color: var(--dark-grey);">Luis F. dos Santos
-                            </h3>
-                            <p
-                                style="font-size: 0.5em; color: var(--brand-blue); font-weight: bold; text-transform: uppercase; margin-top: 5px;">
-                                Cofounder</p>
-                            <p style="color: var(--brand-blue); text-transform: uppercase; font-size: small;">
-                                Software Engineer</p>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-            <section class="capa" data-background="white">
-                <img src="LOGO_05.png" alt="Logo" class="logo-main" style="width: 180px; margin-bottom: 20px;">
-                <h1 style="font-size: 2.5em; margin-bottom: 10px;">Obrigado!</h1>
-                <p style="color: var(--brand-blue); font-size: 1.2em; font-weight: 300; margin-bottom: 50px;">
-                    Estamos prontos para transformar o mercado imobiliário regional.
-                </p>
-
-                <div class="contact-grid">
-                    <div style="text-align: center;">
-                        <p
-                            style="font-size: 0.5em; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">
-                            E-mail</p>
-                        <p style="font-size: 0.7em; font-weight: 700; color: var(--dark-grey);">
-                            bruno@imovelcentral.com.br</p>
-                    </div>
-                    <div style="text-align: center;">
-                        <p
-                            style="font-size: 0.5em; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">
-                            Website</p>
-                        <p style="font-size: 0.7em; font-weight: 700; color: var(--dark-grey);">imovelcentral.com.br
-                        </p>
-                    </div>
-                    <div style="text-align: center;">
-                        <p
-                            style="font-size: 0.5em; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">
-                            Localização</p>
-                        <p style="font-size: 0.7em; font-weight: 700; color: var(--dark-grey);">Assis / SP</p>
-                    </div>
-                </div>
-
-                <div style="margin-top: 80px; font-size: 0.4em; color: #ccc; letter-spacing: 3px;">
-                    IMÓVEL CENTRAL • HUB INTELIGENTE DE NEGÓCIOS
-                </div>
-            </section>
-        </div>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img src="LOGO_05.png" alt="Imóvel Central">
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#solucao">A solução</a>
+        <a href="#mercado">Mercado</a>
+        <a href="#perfis">Apresentações</a>
+        <a href="#equipe">Equipe</a>
+        <a class="btn btn--primary btn--sm" href="mailto:bruno@imovelcentral.com.br">Vamos conversar</a>
+      </nav>
     </div>
+  </header>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.js"></script>
-    <script>
-        const mobileViewport = window.matchMedia('(max-width: 768px) and (orientation: portrait)');
+  <main>
 
-        function updatePresentationLayout() {
-            const isMobile = mobileViewport.matches;
-            document.documentElement.classList.toggle('mobile-layout', isMobile);
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-logo"><img src="LOGO_05.png" alt="Imóvel Central"></div>
+        <p class="eyebrow">Hub imobiliário regional</p>
+        <h1>De um buscador inteligente a um hub de negócios imobiliários.</h1>
+        <p class="hero-sub">Hub Inteligente de Negócios Imobiliários</p>
+        <p class="hero-lead">Centralizamos a oferta imobiliária da região em uma única plataforma e conectamos quem procura, quem vende e quem conhece o comprador certo — com dados organizados por praça.</p>
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="#perfis">Ver apresentações por perfil</a>
+          <a class="btn btn--ghost" href="mailto:bruno@imovelcentral.com.br">Falar com o time</a>
+        </div>
+        <p class="hero-badge"><span class="dot" aria-hidden="true"></span> Em operação: 15 imobiliárias e mais de 2.600 anúncios</p>
+      </div>
+    </section>
 
-            Reveal.configure({
-                width: isMobile ? 390 : 960,
-                height: 700,
-                margin: isMobile ? 0 : 0.1
-            });
-            Reveal.layout();
-        }
+    <!-- Números -->
+    <section class="stats" aria-label="Números do mercado">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat"><b>101.409</b><span>habitantes em Assis - SP, nossa praça inicial</span></div>
+          <div class="stat"><b>128</b><span>corretores registrados no CRECISP na praça</span></div>
+          <div class="stat"><b>217 mil</b><span>habitantes no alcance regional (TAM)</span></div>
+          <div class="stat"><b>+2.600</b><span>anúncios já centralizados na plataforma</span></div>
+        </div>
+      </div>
+    </section>
 
-        document.documentElement.classList.toggle('mobile-layout', mobileViewport.matches);
+    <!-- Problema -->
+    <section class="section" id="problema">
+      <div class="container">
+        <p class="eyebrow">O problema</p>
+        <h2>Comprar ou alugar ainda exige tempo e informação espalhada.</h2>
+        <p class="section-lead">O mercado regional é ativo e valioso — mas a experiência de quem compra, aluga ou vende segue fragmentada.</p>
+        <div class="grid-3">
+          <div class="card">
+            <div class="icon" aria-hidden="true">1</div>
+            <h3>Oferta difícil de comparar</h3>
+            <p>Dificuldade em encontrar boas opções com as características desejadas.</p>
+          </div>
+          <div class="card">
+            <div class="icon" aria-hidden="true">2</div>
+            <h3>Informação espalhada</h3>
+            <p>Anúncios em sites de imobiliárias e plataformas de busca, com registros defasados e duplicados.</p>
+          </div>
+          <div class="card">
+            <div class="icon" aria-hidden="true">3</div>
+            <h3>Busca demorada e presencial</h3>
+            <p>Tempo até fechar o contrato e deslocamento recorrente para ver opções.</p>
+          </div>
+        </div>
+        <p class="statement">A experiência completa é prejudicada — não por falta de imóveis ou de demanda, mas por falta de organização.</p>
+      </div>
+    </section>
 
-        Reveal.initialize({
-            hash: true,
-            center: true,
-            transition: 'fade',
-            margin: mobileViewport.matches ? 0 : 0.1,
-            width: mobileViewport.matches ? 390 : 960,
-            height: 700,
-            touch: true
-        });
+    <!-- Solução -->
+    <section class="section section--soft" id="solucao">
+      <div class="container">
+        <p class="eyebrow">A solução</p>
+        <h2>Um ponto central de consulta do mercado imobiliário regional.</h2>
+        <p class="section-lead">Centralizar os anúncios reduz o tempo de busca e melhora a experiência de comprar, alugar ou vender.</p>
+        <div class="flow">
+          <div class="flow-item">
+            <h3>Tudo em um só lugar</h3>
+            <p>Todos os imóveis da região reunidos em uma única plataforma.</p>
+          </div>
+          <div class="flow-item">
+            <h3>Mapa por bairro</h3>
+            <p>Visualização dos bairros da cidade com os imóveis disponíveis.</p>
+          </div>
+          <div class="flow-item">
+            <h3>Experiência simples</h3>
+            <p>Plataforma responsiva e intuitiva, do primeiro acesso ao contato.</p>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Descoberta</h3>
+            <p>Busca organizada, dados padronizados e recomendações relevantes para o usuário.</p>
+          </div>
+          <div class="card">
+            <h3>Operação</h3>
+            <p>Vitrine, captação, relacionamento e fluxos de atendimento para o profissional.</p>
+          </div>
+          <div class="card">
+            <h3>Inteligência</h3>
+            <p>Leitura de oferta, faixa de preços e dinâmica da região para orientar decisões.</p>
+          </div>
+        </div>
+        <p class="note">IA é uma camada habilitadora: aplicada a descrição, recomendação, matching e atendimento — sempre vinculada a ganhos de experiência e eficiência.</p>
+      </div>
+    </section>
 
-        Reveal.on('ready', updatePresentationLayout);
-        mobileViewport.addEventListener('change', updatePresentationLayout);
-    </script>
+    <!-- Mercado -->
+    <section class="section" id="mercado">
+      <div class="container">
+        <p class="eyebrow">Mercado e expansão</p>
+        <h2>Validar densidade em uma praça e replicar o playbook no interior brasileiro.</h2>
+        <p class="section-lead">Assis e região concentram um mercado ativo, com presença profissional consolidada e baixa digitalização.</p>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Praça inicial</h3>
+            <p><strong>Assis e região:</strong> Assis, Tarumã, Cândido Mota, Palmital e Paraguaçu Paulista.</p>
+            <p>A proximidade operacional favorece a aquisição de oferta e a aprendizagem rápida.</p>
+          </div>
+          <div class="card">
+            <h3>Próximas praças</h3>
+            <p><strong>Marília, Ourinhos e Presidente Prudente (SP),</strong> com mercado ativo e menor digitalização.</p>
+            <p>Critério de entrada: densidade imobiliária, parceiros âncora e custo eficiente.</p>
+          </div>
+        </div>
+        <p class="statement">O ativo estratégico é a densidade regional de dados, oferta e relacionamentos.</p>
+      </div>
+    </section>
+
+    <!-- Atalhos por perfil -->
+    <section class="section section--soft" id="perfis">
+      <div class="container">
+        <p class="eyebrow">Apresentações</p>
+        <h2>Qual é o seu perfil?</h2>
+        <p class="section-lead">Cada apresentação foi preparada para um público. Escolha a sua e siga direto para o que interessa.</p>
+        <div class="grid-3">
+          <a class="profile-card" href="pitch-investidores.html">
+            <span class="tag">Investidores</span>
+            <h3>É um investidor?</h3>
+            <p>Tese de investimento, produto, modelo de negócio, cenários de receita e captação.</p>
+            <span class="go">Clique aqui e saiba mais →</span>
+          </a>
+          <a class="profile-card" href="pitch-parceiros-imobiliarios.html">
+            <span class="tag">Parceiros imobiliários</span>
+            <h3>É imobiliária ou corretor?</h3>
+            <p>Como funciona a parceria, o que muda na sua operação e como participar do piloto regional.</p>
+            <span class="go">Clique aqui e saiba mais →</span>
+          </a>
+          <a class="profile-card" href="business-plan.html">
+            <span class="tag">Plano completo</span>
+            <h3>Quer ver o plano de negócios?</h3>
+            <p>Mercado, roadmap em cinco fases, monetização, metas e projeções do hub regional.</p>
+            <span class="go">Clique aqui e saiba mais →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Equipe -->
+    <section class="section" id="equipe">
+      <div class="container">
+        <p class="eyebrow">Equipe</p>
+        <h2>Produto, engenharia e execução para transformar uma tese regional em plataforma escalável.</h2>
+        <div class="team">
+          <div class="person">
+            <img src="Bruno.png" alt="Bruno Carazato">
+            <h3>Bruno Carazato</h3>
+            <p>Founder — Product Manager, professor e Software Engineering Manager</p>
+          </div>
+          <div class="person">
+            <img src="Joao.png" alt="João Lucas Buzzo">
+            <h3>João Lucas Buzzo</h3>
+            <p>Cofounder — Engenharia de software</p>
+          </div>
+          <div class="person">
+            <img src="Luis.png" alt="Luis Felipe dos Santos">
+            <h3>Luis F. dos Santos</h3>
+            <p>Cofounder — Engenharia de software</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="cta">
+          <h2>Vamos conversar?</h2>
+          <p>Buscamos capital e parceiros estratégicos para validar e escalar o hub regional de negócios imobiliários.</p>
+          <a class="btn btn--primary" href="mailto:bruno@imovelcentral.com.br">Entrar em contato</a>
+          <p class="contact">bruno@imovelcentral.com.br &nbsp;•&nbsp; imovelcentral.com.br &nbsp;•&nbsp; Assis / SP</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© 2026 Imóvel Central — Assis / SP</span>
+      <nav class="footer-links" aria-label="Apresentações">
+        <a href="pitch-investidores.html">Investidores</a>
+        <a href="pitch-parceiros-imobiliarios.html">Parceiros imobiliários</a>
+        <a href="business-plan.html">Plano de negócios</a>
+      </nav>
+    </div>
+  </footer>
+
 </body>
-
 </html>
