@@ -25,12 +25,12 @@
         <div class="card"><div class="icon">02</div><h3>Alcance limitado</h3><p>Boa parte da demanda não chega ao profissional com a oferta certa.</p></div>
         <div class="card"><div class="icon">03</div><h3>Tempo operacional</h3><p>Atendimento e qualificação consomem energia que poderia virar negócio.</p></div>
       </div>
-      <p class="statement">A proposta não é substituir o corretor: é ampliar sua distribuição, inteligência e capacidade de atendimento.</p>
+      <p class="statement">Não substituímos o corretor: ampliamos sua distribuição.</p>
     </section>
 
     <section class="dense">
       <div class="brand">A parceria</div>
-      <h2>Imóvel Central é a vitrine e a camada de inteligência do mercado local.</h2>
+      <h2>Imóvel Central é a vitrine e a inteligência do mercado.</h2>
       <div class="flow">
         <div class="flow-item"><h3>Você disponibiliza a oferta</h3><p>Imóveis com dados organizados, fotos e condições comerciais.</p></div>
         <div class="flow-item"><h3>A plataforma conecta</h3><p>Distribui os anúncios e identifica perfis com maior aderência.</p></div>
@@ -51,7 +51,7 @@
         <div class="card"><div class="icon">◌</div><h3>Organização</h3><p>Dados padronizados para uma experiência confiável.</p></div>
         <div class="card"><div class="icon">⌁</div><h3>Inteligência</h3><p>Leituras de oferta, preço e comportamento local.</p></div>
       </div>
-      <p class="small" style="margin-top:28px">Funcionalidades serão disponibilizadas progressivamente conforme o programa de parceiros e a validação regional.</p>
+      <p class="small" style="margin-top:28px">Funcionalidades disponíveis progressivamente com o programa de parceiros.</p>
     </section>
 
     <section class="dense partner-product">
@@ -63,7 +63,7 @@
           <ul>
             <li>Busca de imóveis organizada e local.</li>
             <li>Recomendações baseadas em preferência e contexto.</li>
-            <li>Informações mais completas para reduzir ruído na decisão.</li>
+            <li>Informações mais completas para decidir melhor.</li>
           </ul>
         </div>
         <div>
@@ -75,12 +75,12 @@
           </ul>
         </div>
       </div>
-      <p class="statement">Começamos com o que gera valor imediato; evoluímos a plataforma junto aos parceiros da região.</p>
+      <p class="statement">Evoluímos a plataforma junto com os parceiros da região.</p>
     </section>
 
     <section class="dense">
       <div class="brand">Por que local</div>
-      <h2>Conhecimento regional é uma vantagem que um portal nacional não reproduz sozinho.</h2>
+      <h2>Um portal nacional não reproduz o conhecimento regional.</h2>
       <table class="comparison">
         <thead><tr><th></th><th>Portais nacionais</th><th>Imóvel Central</th></tr></thead>
         <tbody>
@@ -128,6 +128,16 @@
       wrapper.className = 'content-wrapper';
       while (slide.firstChild) wrapper.appendChild(slide.firstChild);
       slide.appendChild(wrapper);
+    });
+    /* O reveal.js só deixa visível uma janela de seções (atual ±2), o que zera o
+       contador CSS do deck.css e mostra "3" em quase todos os slides. O número
+       sequencial é resolvido aqui, a partir do índice real de cada seção. */
+    const badgeStyle = document.createElement('style');
+    badgeStyle.textContent = '.reveal .slides > section:not(.cover) .content-wrapper > h2:before { content: attr(data-slide); }';
+    document.head.appendChild(badgeStyle);
+    document.querySelectorAll('.reveal .slides > section:not(.cover)').forEach((slide, index) => {
+      const heading = slide.querySelector('.content-wrapper > h2');
+      if (heading) heading.setAttribute('data-slide', index + 1);
     });
     const mobileViewport = window.matchMedia('(max-width: 768px) and (orientation: portrait)');
     function updatePresentationLayout() {
