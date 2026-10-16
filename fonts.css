@@ -1,0 +1,44 @@
+/* Fonte oficial da marca Imóvel Central — Poppins.
+   Licença SIL Open Font License 1.1: uso livre, comercial e redistribuição
+   permitidos, desde que a licença acompanhe os arquivos
+   (assets/Fontes/Poppins/OFL.txt).
+   Carregamos apenas os pesos utilizados pelos projetos: 300, 400, 600, 700 e 800. */
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("assets/Fontes/Poppins/Poppins-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/Fontes/Poppins/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/Fontes/Poppins/Poppins-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/Fontes/Poppins/Poppins-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/Fontes/Poppins/Poppins-ExtraBold.ttf") format("truetype");
+}

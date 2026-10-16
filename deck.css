@@ -6,20 +6,24 @@
   --ic-soft: #f2f8fb;
   --ic-line: #dcecf3;
   --ic-green: #1c9b76;
+  /* Híbrido tipográfico: Poppins (fonte oficial da marca) nos títulos e números;
+     Segoe/Roboto no corpo de texto, preserva legibilidade e o espaço do palco. */
+  --ic-font-display: "Poppins", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --ic-font-text: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-.reveal { font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--ic-ink); }
+.reveal { font-family: var(--ic-font-text); color: var(--ic-ink); }
 .reveal .slides { counter-reset: pitch-slide; }
 .reveal .slides > section { box-sizing: border-box; padding: 40px; text-align: left; }
 .reveal .slides > section:not(.cover):after { background: url('LOGO_05.png') center / contain no-repeat; content: ""; height: 80px; position: absolute; right: 0; top: 0; width: 80px; }
 .reveal .slides > section:not(.cover) { counter-increment: pitch-slide; }
 .content-wrapper { display: block; }
 .reveal h1, .reveal h2, .reveal h3, .reveal p { text-transform: none; }
-.reveal h1 { color: var(--ic-navy); font-size: 2.1em; margin: 0 0 .22em; }
+.reveal h1 { color: var(--ic-navy); font-family: var(--ic-font-display); font-size: 2.1em; letter-spacing: -.01em; margin: 0 0 .22em; }
 .reveal .slides > section:not(.cover) .content-wrapper > h2 { border-bottom: 3px solid var(--ic-blue); color: var(--ic-blue); display: inline-block; font-size: 1.3em; margin: 0 0 40px; padding-bottom: 10px; width: fit-content; }
 .reveal .slides > section:not(.cover) .content-wrapper > h2:before { background: var(--ic-blue); border-radius: 50px; color: white; content: counter(pitch-slide); display: inline-block; font-size: .5em; margin-right: 15px; padding: 4px 12px; vertical-align: middle; }
-.reveal h2 { color: var(--ic-navy); font-size: 1.3em; margin: 0 0 .68em; }
-.reveal h3 { color: var(--ic-navy); font-size: .68em; margin: 0 0 .45em; }
+.reveal h2 { color: var(--ic-navy); font-family: var(--ic-font-display); font-size: 1.3em; letter-spacing: -.01em; margin: 0 0 .68em; }
+.reveal h3 { color: var(--ic-navy); font-family: var(--ic-font-display); font-size: .68em; letter-spacing: -.005em; margin: 0 0 .45em; }
 .reveal p { font-size: .68em; line-height: 1.45; }
 .reveal ul { margin: .45em 0 0 .7em; }
 .reveal li { color: var(--ic-ink); font-size: .67em; line-height: 1.35; margin: .42em 0; }
@@ -29,7 +33,7 @@
 .cover { text-align: center !important; }
 .cover .mark { width: 250px; margin: 0 0 30px; }
 .cover .eyebrow, .eyebrow { color: var(--ic-blue); font-size: .46em; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
-.cover .subtitle { color: var(--ic-blue); font-size: 1.5em; font-weight: 300; margin: 0 auto; max-width: 720px; }
+.cover .subtitle { color: var(--ic-blue); font-family: var(--ic-font-display); font-size: 1.5em; font-weight: 300; margin: 0 auto; max-width: 720px; }
 .cover .footer { color: #888; font-size: .6em; letter-spacing: 2px; margin-top: 100px; text-transform: uppercase; }
 
 .brand { display: none; }
@@ -44,7 +48,7 @@
 .card { background: var(--ic-soft); border-radius: 10px; padding: 20px; }
 .card p { font-size: .53em; margin: 0; }
 .card .icon { align-items: center; background: var(--ic-blue); border-radius: 50%; color: #fff; display: flex; font-size: .55em; font-weight: 700; height: 28px; justify-content: center; margin-bottom: 13px; width: 28px; }
-.card .number { color: var(--ic-blue); font-size: 1.2em; font-weight: 800; line-height: 1; margin-bottom: 9px; }
+.card .number { color: var(--ic-blue); font-family: var(--ic-font-display); font-size: 1.2em; font-weight: 800; line-height: 1; margin-bottom: 9px; }
 
 .flow { align-items: stretch; display: grid; gap: 13px; grid-template-columns: repeat(3, 1fr); margin-top: 24px; }
 .flow-item { border: 1px solid var(--ic-line); border-radius: 10px; padding: 15px; position: relative; }
@@ -60,7 +64,7 @@
 .no { color: #aeb9be; }
 
 .metric { border-left: 3px solid var(--ic-blue); padding: 5px 0 5px 15px; }
-.metric b { color: var(--ic-navy); display: block; font-size: .94em; }
+.metric b { color: var(--ic-navy); display: block; font-family: var(--ic-font-display); font-size: .94em; }
 .metric span { color: var(--ic-muted); display: block; font-size: .42em; line-height: 1.25; }
 .placeholder { border: 1px dashed #8ccde3; border-radius: 8px; color: #36748a; font-size: .44em; line-height: 1.3; padding: 10px 12px; }
 

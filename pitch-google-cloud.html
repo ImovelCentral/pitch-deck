@@ -8,6 +8,48 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/white.min.css">
     <style>
+        /* Fonte oficial da marca (Poppins, licença OFL — ver assets/Fontes/Poppins/OFL.txt).
+           Híbrido: Poppins nos títulos e números; corpo mantém o stack Segoe/Roboto. */
+        @font-face {
+            font-family: "Poppins";
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url("assets/Fontes/Poppins/Poppins-Light.ttf") format("truetype");
+        }
+
+        @font-face {
+            font-family: "Poppins";
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url("assets/Fontes/Poppins/Poppins-Regular.ttf") format("truetype");
+        }
+
+        @font-face {
+            font-family: "Poppins";
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url("assets/Fontes/Poppins/Poppins-SemiBold.ttf") format("truetype");
+        }
+
+        @font-face {
+            font-family: "Poppins";
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url("assets/Fontes/Poppins/Poppins-Bold.ttf") format("truetype");
+        }
+
+        @font-face {
+            font-family: "Poppins";
+            font-style: normal;
+            font-weight: 800;
+            font-display: swap;
+            src: url("assets/Fontes/Poppins/Poppins-ExtraBold.ttf") format("truetype");
+        }
+
         :root {
             --brand-blue: #00aeef;
             --dark-grey: #202124;
@@ -22,6 +64,8 @@
         .reveal h2,
         .reveal h3 {
             color: var(--dark-grey);
+            font-family: "Poppins", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            letter-spacing: -0.01em;
             text-transform: none;
             font-weight: 700;
             border: none;
@@ -94,7 +138,9 @@
         }
 
         .step-number {
+            font-family: "Poppins", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             font-size: 0.5em;
+            font-weight: 700;
             vertical-align: middle;
             background: var(--brand-blue);
             color: white;

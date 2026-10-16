@@ -19,7 +19,7 @@ html { scroll-behavior: smooth; scroll-padding-top: calc(var(--ic-header-h) + 16
 body {
   background: #fff;
   color: var(--ic-ink);
-  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Poppins", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 17px;
   line-height: 1.6;
   margin: 0;
@@ -37,7 +37,7 @@ a { color: var(--ic-blue); }
 
 .eyebrow { color: var(--ic-blue); font-size: .85rem; font-weight: 700; letter-spacing: 2px; margin: 0 0 12px; text-transform: uppercase; }
 
-.section h2 { color: var(--ic-navy); font-size: clamp(1.6rem, 3vw, 2.1rem); line-height: 1.22; margin: 0 0 14px; }
+.section h2 { color: var(--ic-navy); font-size: clamp(1.6rem, 3vw, 2.1rem); letter-spacing: -.01em; line-height: 1.22; margin: 0 0 14px; }
 
 .section-lead { color: var(--ic-muted); font-size: 1.12rem; margin: 0 0 38px; max-width: 700px; }
 
@@ -103,7 +103,7 @@ a { color: var(--ic-blue); }
 .hero-logo { background: rgba(255, 255, 255, .96); border-radius: 16px; display: inline-block; margin-bottom: 28px; padding: 12px 18px; }
 .hero-logo img { display: block; height: 44px; width: auto; }
 
-.hero h1 { font-size: clamp(2.2rem, 5vw, 3.3rem); line-height: 1.1; margin: 0 0 12px; }
+.hero h1 { font-size: clamp(2.2rem, 5vw, 3.3rem); letter-spacing: -.015em; line-height: 1.1; margin: 0 0 12px; }
 
 .hero-sub { color: #7fdcfa; font-size: clamp(1.1rem, 2.2vw, 1.4rem); font-weight: 300; margin: 0 0 20px; }
 
