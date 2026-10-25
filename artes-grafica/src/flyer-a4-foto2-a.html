@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Flyer A4 foto · Fundo inteiro · Direção A (Navy)</title>
+<link rel="stylesheet" href="print.css">
+<style>
+  .sheet--a4 {
+    background: var(--navy);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    isolation: isolate;
+  }
+
+  /* Foto sangrando a folha inteira */
+  .photo-full {
+    inset: 0; position: absolute; z-index: -2;
+  }
+  .photo-full img {
+    /* Uma família só (grupo da direita: pai, mãe e filhos com tablet);
+       recorte cai fora da emenda da colagem original */
+    height: 100%; object-fit: cover; object-position: 100% 50%; width: 100%;
+  }
+  /* Véu navy: garante contraste do texto sobre a imagem */
+  .photo-full:after {
+    background: linear-gradient(180deg,
+      rgba(0,48,89,.92) 0%,
+      rgba(0,48,89,.74) 28%,
+      rgba(0,48,89,.80) 58%,
+      rgba(0,48,89,.88) 82%,
+      rgba(0,48,89,.97) 100%);
+    content: ""; inset: 0; position: absolute;
+  }
+
+  /* Marca d'água do símbolo à direita */
+  .sheet--a4 .bg-symbol {
+    height: 190mm; opacity: .06; right: -54mm; top: 46mm; width: 190mm; z-index: -1;
+  }
+
+  header { align-items: flex-start; display: flex; justify-content: space-between; }
+  header .logo { height: 13mm; width: auto; }
+  .pill { background: rgba(0,177,246,.16); border: .4mm solid var(--cyan); color: var(--cyan); }
+
+  .hero { margin-top: 34mm; }
+  .kicker {
+    align-items: center; color: var(--cyan); display: flex; font-size: 10pt;
+    font-weight: 700; gap: 3mm; letter-spacing: .2em; text-transform: uppercase;
+  }
+  .kicker:after { background: var(--cyan); content: ""; height: .7mm; width: 22mm; }
+
+  h1 {
+    font-size: 45pt; font-weight: 800; letter-spacing: -.02em; line-height: 1.03;
+    margin-top: 7mm; max-width: 180mm;
+    text-shadow: 0 .6mm 3mm rgba(0,20,40,.45);
+  }
+  h1 em { color: var(--cyan); font-style: normal; }
+
+  .sub {
+    color: rgba(255,255,255,.9); font-size: 16pt; font-weight: 300;
+    line-height: 1.45; margin-top: 7mm; max-width: 172mm;
+    text-shadow: 0 .4mm 2.4mm rgba(0,20,40,.5);
+  }
+  .sub b { color: #fff; font-weight: 700; }
+
+  .chips { display: flex; gap: 4mm; list-style: none; margin-top: 11mm; }
+  .chips li {
+    align-items: center; background: rgba(0,30,58,.5);
+    border: .3mm solid rgba(255,255,255,.28); border-radius: 3mm;
+    display: flex; font-size: 11.5pt; font-weight: 600; gap: 3mm;
+    padding: 4mm 5mm; backdrop-filter: blur(1mm);
+  }
+  .chips li:before {
+    align-items: center; background: var(--cyan); border-radius: 50%; color: var(--navy);
+    content: "✓"; display: flex; font-size: 10pt; font-weight: 800;
+    height: 7mm; justify-content: center; width: 7mm;
+  }
+
+  /* Bloco de CTA */
+  .cta {
+    align-items: center; background: #fff; border-radius: 5mm; color: var(--navy);
+    display: flex; gap: 7mm; margin-top: auto; padding: 7mm;
+  }
+  .cta .qr { background: var(--cyan-soft); border-radius: 3mm; padding: 3mm; width: 42mm; }
+  .cta .cta-title { font-size: 17pt; font-weight: 700; letter-spacing: -.01em; }
+  .cta .cta-text { color: var(--muted); font-size: 11pt; font-weight: 500; margin-top: 1.5mm; }
+  .cta .url { color: var(--blue); font-size: 26pt; font-weight: 800; letter-spacing: -.02em; margin-top: 3mm; }
+
+  footer {
+    align-items: center; border-top: .3mm solid rgba(255,255,255,.25);
+    color: rgba(255,255,255,.78); display: flex; font-size: 9.5pt;
+    font-weight: 500; justify-content: space-between; margin-top: 7mm; padding-top: 5mm;
+  }
+</style>
+</head>
+<body>
+<div class="sheet sheet--a4 pad-a4">
+  <div class="photo-full"><img src="assets/aplicacao-09.png" alt="Famílias buscando imóvel"></div>
+  <img class="bg-symbol" src="assets/LOGO_SIMBOLO_01.png" alt="">
+
+  <header>
+    <img class="logo" src="assets/LOGO_TIPO_01.png" alt="Imóvel Central">
+    <span class="pill">Assis e região</span>
+  </header>
+
+  <div class="hero">
+    <p class="kicker">Hub imobiliário regional</p>
+    <h1>Seu lar ideal está <em>a alguns cliques de distância!</em></h1>
+    <p class="sub">
+      Encontre casas, apartamentos, terrenos e muito mais para comprar ou alugar —
+      com <b>mais de 4.000 anúncios</b> centralizados e uma busca simples por bairro e mapa.
+    </p>
+    <ul class="chips">
+      <li>Buscar por bairro e mapa</li>
+      <li>Dados organizados por bairro</li>
+      <li>Contato direto com a imobiliária</li>
+    </ul>
+  </div>
+
+  <div class="cta">
+    <img class="qr" src="assets/qr-navy.svg" alt="QR Code">
+    <div>
+      <p class="cta-title">Aponte a câmera e comece a buscar</p>
+      <p class="cta-text">Mais de 4.000 anúncios em Assis, Tarumã, Cândido Mota, Palmital e Paraguaçu</p>
+      <p class="url">imovelcentral.com.br</p>
+    </div>
+  </div>
+
+  <footer>
+    <span>Imóvel Central · Hub Inteligente de Negócios Imobiliários</span>
+    <span>contato@imovelcentral.com.br</span>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+/* Sistema visual Imóvel Central — artes para gráfica.
+   Unidades em mm/pt para fidelidade de impressão.
+   Fontes: Poppins (assets/Fontes/Poppins), SIL OFL 1.1. */
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../../assets/Fontes/Poppins/Poppins-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../assets/Fontes/Poppins/Poppins-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../../assets/Fontes/Poppins/Poppins-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../../assets/Fontes/Poppins/Poppins-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../../assets/Fontes/Poppins/Poppins-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 800;
+  src: url("../../assets/Fontes/Poppins/Poppins-ExtraBold.ttf") format("truetype");
+}
+
+:root {
+  /* Tokens da marca (extraídos dos logos oficiais) */
+  --navy: #003059;
+  --blue: #006FEE;
+  --cyan: #00B1F6;
+  --cyan-soft: #E5F7FE;
+  --soft: #F2F8FB;
+  --line: #DCECF3;
+  --ink: #263238;
+  --muted: #65727A;
+  /* Sangria de 3mm em todas as peças */
+  --bleed: 3mm;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #fff; }
+body {
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+img { display: block; }
+
+@page { margin: 0; }
+
+/* Folhas: tamanho final com sangria (corte + 2×3mm) */
+.sheet { overflow: hidden; position: relative; page-break-after: always; }
+.sheet:last-child { page-break-after: auto; }
+.sheet--a4   { height: 303mm; width: 216mm; } /* A4 210×297 + sangria */
+.sheet--mini { height: 156mm; width: 106mm; } /* 10×15 + sangria */
+.sheet--card { height:  56mm; width:  96mm; } /* 9×5 + sangria */
+
+/* Área segura: 3mm de sangria + 5mm de respiro interno */
+.pad-a4   { padding: 8mm; }
+.pad-mini { padding: 7mm; }
+.pad-card { padding: 6mm; }
+
+/* Elementos de marca */
+.eyebrow {
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+}
+.pill {
+  border-radius: 99mm;
+  display: inline-block;
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: .22em;
+  padding: 1.6mm 4.5mm;
+  text-transform: uppercase;
+}
+.benefits { list-style: none; }
+.benefits li { position: relative; }
+.benefits li:before { font-weight: 800; }
+
+/* Marca d'água do símbolo (casa + localização) */
+.bg-symbol { pointer-events: none; position: absolute; }
+
+/* Força fundos coloridos na impressão */
+* { -webkit-print-color-adjust: exact; print-color-adjust: exact; }

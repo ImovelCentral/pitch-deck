@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Cartão 9×5 — Direção B (Clean)</title>
+<link rel="stylesheet" href="print.css">
+<style>
+  /* ---------------- FRENTE ---------------- */
+  .front { background: #fff; color: var(--ink); isolation: isolate; position: relative; }
+  .front .panel {
+    background: var(--navy); border-radius: 3mm; bottom: 6mm; left: 6mm;
+    position: absolute; right: 6mm; top: 6mm;
+  }
+  .front .content {
+    align-items: center; bottom: 6mm; display: flex; gap: 4.5mm;
+    justify-content: center; left: 6mm; padding: 6mm; position: absolute;
+    right: 6mm; top: 6mm;
+  }
+  .front .sym {
+    align-items: center; background: rgba(255,255,255,.1); border-radius: 50%;
+    display: flex; flex-shrink: 0; height: 17mm; justify-content: center; width: 17mm;
+  }
+  .front .sym img { height: 10mm; width: auto; }
+  .front .logo { height: 7.5mm; width: auto; }
+  .front .tagline {
+    color: var(--cyan); font-size: 5.4pt; font-weight: 600; letter-spacing: .14em;
+    margin-top: 2mm; text-transform: uppercase;
+  }
+  .front .rule { background: var(--cyan); height: .7mm; margin-top: 2.5mm; width: 12mm; }
+
+  /* ---------------- VERSO ---------------- */
+  .back { background: var(--navy); color: #fff; display: flex; gap: 5mm; isolation: isolate; }
+  .back .qr {
+    align-self: center; background: var(--cyan-soft); border-radius: 2.5mm; flex-shrink: 0;
+    padding: 2.5mm; width: 27mm;
+  }
+  .back .info { align-self: center; flex: 1; }
+  .back .info-title { font-size: 8.5pt; font-weight: 800; letter-spacing: -.01em; line-height: 1.15; }
+  .back .info-sub { color: rgba(255,255,255,.72); font-size: 5.6pt; font-weight: 400; line-height: 1.35; margin-top: 1.2mm; }
+  .back .contacts { border-top: .3mm solid rgba(255,255,255,.22); margin-top: 2.5mm; padding-top: 2.5mm; }
+  .back .contacts div { align-items: baseline; display: flex; font-size: 6pt; font-weight: 400; margin-top: .9mm; }
+  .back .contacts b { color: var(--cyan); font-weight: 700; width: 12mm; }
+  .back .contacts span { color: rgba(255,255,255,.85); }
+  .back .email span { color: #fff !important; font-weight: 600; }
+</style>
+</head>
+<body>
+<!-- FRENTE -->
+<div class="sheet sheet--card front">
+  <div class="panel"></div>
+  <div class="content">
+    <div class="sym"><img src="assets/LOGO_SIMBOLO_01.png" alt=""></div>
+    <div>
+      <img class="logo" src="assets/LOGO_TIPO_01.png" alt="Imóvel Central">
+      <div class="rule"></div>
+      <p class="tagline">Hub Inteligente<br>de Negócios Imobiliários</p>
+    </div>
+  </div>
+</div>
+
+<!-- VERSO -->
+<div class="sheet sheet--card pad-card back">
+  <img class="qr" src="assets/qr-navy.svg" alt="QR Code">
+  <div class="info">
+    <p class="info-title">Vamos conversar?</p>
+    <p class="info-sub">Buscamos parceiros e investidores para escalar o hub regional.</p>
+    <div class="contacts">
+      <div class="email"><b>E-mail</b><span>contato@imovelcentral.com.br</span></div>
+      <div><b>Bruno</b><span>(43) 99606-6392</span></div>
+      <div><b>João</b><span>(18) 99777-1759</span></div>
+      <div><b>Luis</b><span>(18) 99678-2516</span></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
