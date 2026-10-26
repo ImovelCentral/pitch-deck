@@ -24,9 +24,7 @@ const PIECES = [
   { id: "mini",  file: "flyer-mini-b.html",dir: "b", w: 106, h: 156, name: "flyer-10x15-100x150-v2" },
   { id: "card",  file: "cartao-a.html",    dir: "a", w:  96, h:  56, name: "cartao-9x5-v2", pages: 2 },
   { id: "card",  file: "cartao-b.html",    dir: "b", w:  96, h:  56, name: "cartao-9x5-v2", pages: 2 },
-  /* A4 com foto (Aplicação_09) — 2 layouts × 2 direções */
-  { id: "foto1", file: "flyer-a4-foto1-a.html", dir: "a", w: 216, h: 303, name: "flyer-a4-210x297-foto1-faixaTopo" },
-  { id: "foto1", file: "flyer-a4-foto1-b.html", dir: "b", w: 216, h: 303, name: "flyer-a4-210x297-foto1-faixaTopo" },
+  /* A4 com foto (Aplicação_09) — fundo inteiro × 2 direções */
   { id: "foto2", file: "flyer-a4-foto2-a.html", dir: "a", w: 216, h: 303, name: "flyer-a4-210x297-foto2-fundoInteiro" },
   { id: "foto2", file: "flyer-a4-foto2-b.html", dir: "b", w: 216, h: 303, name: "flyer-a4-210x297-foto2-fundoInteiro" },
 ];
