@@ -102,6 +102,22 @@
 .versus-card--us .versus-value { color: var(--ic-blue-deep); font-weight: 600; }
 .versus-badge { align-items: center; background: var(--ic-blue); border: 4px solid #fff; border-radius: 50%; box-sizing: border-box; box-shadow: 0 8px 20px rgba(0, 174, 239, .32); color: #fff; display: flex; font-family: var(--ic-font-display); font-size: .36em; font-weight: 700; height: 48px; justify-content: center; left: 50%; letter-spacing: .04em; position: absolute; top: 50%; transform: translate(-50%, -50%); width: 48px; z-index: 2; }
 
+/* Piloto: etapas à esquerda e condições comerciais à direita. */
+.pilot-layout { align-items: start; display: grid; gap: 34px; grid-template-columns: .9fr 1.1fr; }
+.pilot-column-head { align-items: baseline; border-bottom: 1px solid var(--ic-line); color: var(--ic-muted); display: flex; font-family: var(--ic-font-display); font-size: .36em; font-weight: 700; justify-content: space-between; letter-spacing: .08em; margin-bottom: 12px; padding-bottom: 9px; text-transform: uppercase; }
+.pilot-duration { background: rgba(0, 174, 239, .1); border-radius: 999px; color: var(--ic-blue); font-size: .92em; letter-spacing: .04em; padding: 2px 9px; }
+.pilot-layout .timeline { margin: 0 0 0 16px; }
+.pilot-layout .milestone { margin-bottom: 14px; }
+.pilot-layout .milestone:last-child { margin-bottom: 0; }
+.pilot-layout .milestone p { font-size: .44em; }
+.pilot-terms { background: #f6fafc; border: 1px solid #e4f1f6; border-radius: 14px; padding: 16px 18px; }
+.pilot-block + .pilot-block { margin-top: 12px; }
+.pilot-block h4 { color: var(--ic-table-strong); font-family: var(--ic-font-display); font-size: .5em; font-weight: 600; margin: 0 0 6px; }
+.pilot-block ul { list-style: none; margin: 0; padding: 0; }
+.pilot-block li { color: var(--ic-ink); font-size: .42em; line-height: 1.4; padding: 4px 0 4px 15px; position: relative; }
+.pilot-block li:before { background: var(--ic-blue); border-radius: 50%; content: ""; height: 5px; left: 0; position: absolute; top: .55em; width: 5px; }
+.pilot-terms .pilot-footer { border-top: 1px solid #e4f1f6; color: var(--ic-muted); font-size: .36em; line-height: 1.35; margin: 12px 0 0; padding-top: 9px; }
+
 /* Matriz comparativa: cabeçalho leve, linhas hairline e uma única coluna
    em destaque. Sem zebra, sem hover e sem pills — o contraste vem da coluna,
    não de cada célula. */
@@ -286,6 +302,20 @@ html.mobile-layout .versus-icon svg { height: 15px; width: 15px; }
 html.mobile-layout .versus-eyebrow { font-size: .3em; }
 html.mobile-layout .versus-card h3 { font-size: .5em; }
 html.mobile-layout .versus .versus-list li { font-size: .38em; gap: 8px; line-height: 1.3; padding: 5px 0; }
+html.mobile-layout .pilot-layout { gap: 12px; grid-template-columns: 1fr; }
+html.mobile-layout .pilot-column-head { font-size: .32em; margin-bottom: 8px; padding-bottom: 6px; }
+html.mobile-layout .pilot-steps .pilot-column-head { display: none; }
+html.mobile-layout .pilot-layout .timeline { border: 0; margin: 0; padding: 0; }
+html.mobile-layout .pilot-layout .milestone { margin: 0 0 3px; }
+html.mobile-layout .pilot-layout .milestone p { display: none; }
+html.mobile-layout .pilot-layout .milestone h3 { font-size: .4em; line-height: 1.2; }
+html.mobile-layout .pilot-layout .milestone:before { display: none; }
+html.mobile-layout .pilot-terms { padding: 9px 11px; }
+html.mobile-layout .pilot-block + .pilot-block { margin-top: 8px; }
+html.mobile-layout .pilot-block h4 { font-size: .42em; margin-bottom: 4px; }
+html.mobile-layout .pilot-block li { font-size: .36em; line-height: 1.25; padding: 2px 0 2px 12px; }
+html.mobile-layout .pilot-block li:before { height: 4px; width: 4px; }
+html.mobile-layout .pilot-terms .pilot-footer { font-size: .32em; margin-top: 7px; padding-top: 6px; }
 html.mobile-layout .card { padding: 11px 13px; }
 html.mobile-layout .card .icon { font-size: .42em; height: 22px; margin-bottom: 7px; width: 22px; }
 html.mobile-layout .card .number { font-size: .75em; margin-bottom: 4px; }
