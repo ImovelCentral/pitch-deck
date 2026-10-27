@@ -118,6 +118,24 @@
 .pilot-block li:before { background: var(--ic-blue); border-radius: 50%; content: ""; height: 5px; left: 0; position: absolute; top: .55em; width: 5px; }
 .pilot-terms .pilot-footer { border-top: 1px solid #e4f1f6; color: var(--ic-muted); font-size: .36em; line-height: 1.35; margin: 12px 0 0; padding-top: 9px; }
 
+/* Captação: oferta em destaque e condições do investidor. */
+.funding-grid { align-items: stretch; display: grid; gap: 22px; grid-template-columns: .86fr 1.14fr; }
+.funding-offer { background: linear-gradient(145deg, #0c2b3a 0%, #006f9e 100%); border-radius: 18px; box-shadow: 0 18px 38px rgba(0, 95, 140, .18); color: #fff; display: flex; flex-direction: column; justify-content: space-between; padding: 18px 20px; }
+.funding-eyebrow { color: #8fdcff; font-family: var(--ic-font-display); font-size: .34em; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.funding-amount { font-family: var(--ic-font-display); font-size: 1.05em; font-weight: 700; line-height: 1; margin: 8px 0 4px; }
+.funding-equity { color: #7fe3ff; font-family: var(--ic-font-display); font-size: .68em; font-weight: 700; line-height: 1.1; }
+.funding-offer .funding-valuation { color: rgba(255, 255, 255, .78); font-size: .38em; line-height: 1.45; margin: 8px 0 0; }
+.funding-offer .funding-tranche { border-top: 1px solid rgba(255, 255, 255, .2); color: #fff; font-size: .36em; line-height: 1.4; margin: 10px 0 0; padding-top: 10px; }
+.funding-offer .funding-retain { color: #8fdcff; font-size: .34em; margin: 6px 0 0; }
+.funding-reasons { display: grid; gap: 12px; }
+.funding-item { background: #f6fafc; border: 1px solid #e4f1f6; border-left: 3px solid var(--ic-blue); border-radius: 12px; padding: 15px 18px; }
+.funding-item h3 { color: var(--ic-table-strong); font-size: .55em; margin: 0 0 4px; }
+.funding-item p { color: var(--ic-ink); font-size: .4em; line-height: 1.45; margin: 0; }
+.funding-metrics { display: grid; gap: 12px; grid-template-columns: repeat(3, 1fr); margin-top: 18px; }
+.funding-metric { background: var(--ic-soft); border-radius: 12px; padding: 12px 16px; }
+.funding-metric b { color: var(--ic-blue); display: block; font-family: var(--ic-font-display); font-size: .8em; line-height: 1; }
+.funding-metric span { color: var(--ic-muted); display: block; font-size: .36em; margin-top: 5px; }
+
 /* Matriz comparativa: cabeçalho leve, linhas hairline e uma única coluna
    em destaque. Sem zebra, sem hover e sem pills — o contraste vem da coluna,
    não de cada célula. */
@@ -316,6 +334,20 @@ html.mobile-layout .pilot-block h4 { font-size: .42em; margin-bottom: 4px; }
 html.mobile-layout .pilot-block li { font-size: .36em; line-height: 1.25; padding: 2px 0 2px 12px; }
 html.mobile-layout .pilot-block li:before { height: 4px; width: 4px; }
 html.mobile-layout .pilot-terms .pilot-footer { font-size: .32em; margin-top: 7px; padding-top: 6px; }
+html.mobile-layout .funding-slide .lead { display: none; }
+html.mobile-layout .funding-grid { gap: 10px; grid-template-columns: 1fr; }
+html.mobile-layout .funding-offer { padding: 14px 16px; }
+html.mobile-layout .funding-amount { font-size: .9em; margin: 6px 0 4px; }
+html.mobile-layout .funding-equity { font-size: .58em; }
+html.mobile-layout .funding-offer .funding-valuation { font-size: .35em; margin-top: 7px; }
+html.mobile-layout .funding-offer .funding-tranche { font-size: .33em; margin-top: 9px; padding-top: 8px; }
+html.mobile-layout .funding-offer .funding-retain { font-size: .3em; }
+html.mobile-layout .funding-reasons { gap: 8px; }
+html.mobile-layout .funding-item { padding: 8px 10px; }
+html.mobile-layout .funding-item h3 { font-size: .44em; }
+html.mobile-layout .funding-item p { font-size: .34em; line-height: 1.25; }
+html.mobile-layout .funding-metrics { display: none; }
+html.mobile-layout .funding-slide .small { display: none; }
 html.mobile-layout .card { padding: 11px 13px; }
 html.mobile-layout .card .icon { font-size: .42em; height: 22px; margin-bottom: 7px; width: 22px; }
 html.mobile-layout .card .number { font-size: .75em; margin-bottom: 4px; }
