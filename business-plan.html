@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/white.min.css">
   <link rel="stylesheet" href="fonts.css">
-  <link rel="stylesheet" href="deck.css?v=20261027-27">
+  <link rel="stylesheet" href="deck.css?v=20261027-30">
 </head>
 <body>
   <a class="back-home" href="index.html" title="Voltar para a apresentação inicial">← Apresentação inicial</a>
@@ -180,49 +180,137 @@
     <section class="dense">
       <div class="brand">Fluxo de renda</div>
       <h2>Receita, custos e resultado por semestre.</h2>
-      <div class="table-panel">
+      <div class="table-panel chart-panel">
         <div class="table-panel__head">
           <span>Fluxo de renda</span>
           <span>Valores em R$</span>
         </div>
-        <div class="figures-desktop">
-          <table class="comparison comparison--figures">
-            <thead>
-              <tr>
-                <th></th><th>S1</th><th>S2</th><th class="is-key">S3<span class="breakeven-tag">breakeven</span></th><th>S4</th><th>S5</th><th>S6</th><th>S7</th><th>S8</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>Receita</td><td>0</td><td>0</td><td class="is-key">27.500</td><td>102.230</td><td>300.000</td><td>500.000</td><td>1.000.000</td><td>3.000.000</td></tr>
-              <tr><td>Custos</td><td>20.100</td><td>20.100</td><td class="is-key">20.100</td><td>35.400</td><td>282.800</td><td>282.800</td><td>457.000</td><td>794.000</td></tr>
-              <tr>
-                <td>Resultado</td>
-                <td class="negative"><span class="result-value">−20.100</span><span class="result-bar" aria-hidden="true"><span style="width:10%"></span></span></td>
-                <td class="negative"><span class="result-value">−20.100</span><span class="result-bar" aria-hidden="true"><span style="width:10%"></span></span></td>
-                <td class="is-key positive"><span class="result-value">7.400</span><span class="result-bar" aria-hidden="true"><span style="width:8%"></span></span></td>
-                <td class="positive"><span class="result-value">66.830</span><span class="result-bar" aria-hidden="true"><span style="width:18%"></span></span></td>
-                <td class="positive"><span class="result-value">17.200</span><span class="result-bar" aria-hidden="true"><span style="width:9%"></span></span></td>
-                <td class="positive"><span class="result-value">217.200</span><span class="result-bar" aria-hidden="true"><span style="width:32%"></span></span></td>
-                <td class="positive"><span class="result-value">543.000</span><span class="result-bar" aria-hidden="true"><span style="width:50%"></span></span></td>
-                <td class="positive"><span class="result-value">2.206.000</span><span class="result-bar" aria-hidden="true"><span style="width:100%"></span></span></td>
-              </tr>
-            </tbody>
-          </table>
+        <svg class="revenue-chart" viewBox="0 0 1000 390" role="img" aria-labelledby="chart-title chart-desc">
+            <title id="chart-title">Receita, custos e resultado por semestre</title>
+            <desc id="chart-desc">Barras de receita, linha de custos e resultados por semestre. O resultado fica positivo no terceiro semestre.</desc>
+            <defs>
+              <linearGradient id="revenue-fill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#00aeef"/>
+                <stop offset="1" stop-color="#c8edf9"/>
+              </linearGradient>
+            </defs>
+            <rect x="316" y="24" width="74" height="286" rx="8" fill="#1c9b76" opacity=".05"/>
+            <g fill="none" stroke="#eaf3f7" stroke-width="1">
+          <line x1="72" y1="310.00" x2="972" y2="310.00"/>
+          <line x1="72" y1="262.33" x2="972" y2="262.33"/>
+          <line x1="72" y1="214.67" x2="972" y2="214.67"/>
+          <line x1="72" y1="167.00" x2="972" y2="167.00"/>
+          <line x1="72" y1="119.33" x2="972" y2="119.33"/>
+          <line x1="72" y1="71.67" x2="972" y2="71.67"/>
+          <line x1="72" y1="24.00" x2="972" y2="24.00"/>
+            </g>
+            <g fill="#65727a" font-size="11.5" text-anchor="end">
+          <text x="62" y="314.00">0</text>
+          <text x="62" y="266.33">500 mil</text>
+          <text x="62" y="218.67">1 mi</text>
+          <text x="62" y="171.00">1,5 mi</text>
+          <text x="62" y="123.33">2 mi</text>
+          <text x="62" y="75.67">2,5 mi</text>
+          <text x="62" y="28.00">3 mi</text>
+            </g>
+            <line x1="353.25" y1="310" x2="353.25" y2="20" stroke="#1c9b76" stroke-width="1.5" stroke-dasharray="4 6" opacity=".55"/>
+            <rect x="309" y="2" width="88" height="18" rx="9" fill="#e5f8f1"/>
+            <text x="353" y="15" fill="#1c9b76" font-size="9.5" font-weight="700" text-anchor="middle" letter-spacing=".06em">BREAKEVEN</text>
+            <g>
+            <rect x="330.25" y="307.38" width="46" height="2.62" rx="5" fill="url(#revenue-fill)"/>
+            <rect x="442.75" y="300.25" width="46" height="9.75" rx="5" fill="url(#revenue-fill)"/>
+            <rect x="555.25" y="281.40" width="46" height="28.60" rx="5" fill="url(#revenue-fill)"/>
+            <rect x="667.75" y="262.33" width="46" height="47.67" rx="5" fill="url(#revenue-fill)"/>
+            <rect x="780.25" y="214.67" width="46" height="95.33" rx="5" fill="url(#revenue-fill)"/>
+            <rect x="892.75" y="24.00" width="46" height="286.00" rx="5" fill="url(#revenue-fill)"/>
+            </g>
+            <g>
+            <text x="128.25" y="302.00" fill="#aebbc1" font-size="11.5" text-anchor="middle">0</text>
+            <text x="240.75" y="302.00" fill="#aebbc1" font-size="11.5" text-anchor="middle">0</text>
+            <text x="353.25" y="299.38" fill="#65727a" font-size="11.5" text-anchor="middle">27,5 mil</text>
+            <text x="465.75" y="292.25" fill="#65727a" font-size="11.5" text-anchor="middle">102 mil</text>
+            <text x="578.25" y="273.40" fill="#65727a" font-size="11.5" text-anchor="middle">300 mil</text>
+            <text x="690.75" y="254.33" fill="#65727a" font-size="11.5" text-anchor="middle">500 mil</text>
+            <text x="803.25" y="206.67" fill="#65727a" font-size="11.5" text-anchor="middle">1 mi</text>
+            <text x="915.75" y="16.00" fill="#65727a" font-size="11.5" text-anchor="middle">3 mi</text>
+            </g>
+            <polyline points="128.25,308.08 240.75,308.08 353.25,308.08 465.75,306.63 578.25,283.04 690.75,283.04 803.25,266.43 915.75,234.31" fill="none" stroke="#33454e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+            <g>
+            <circle cx="128.25" cy="308.08" r="3.5" fill="#fff" stroke="#33454e" stroke-width="2"/>
+            <circle cx="240.75" cy="308.08" r="3.5" fill="#fff" stroke="#33454e" stroke-width="2"/>
+            <circle cx="353.25" cy="308.08" r="3.5" fill="#fff" stroke="#33454e" stroke-width="2"/>
+            <circle cx="465.75" cy="306.63" r="3.5" fill="#fff" stroke="#33454e" stroke-width="2"/>
+            <circle cx="578.25" cy="283.04" r="3.5" fill="#fff" stroke="#33454e" stroke-width="2"/>
+            <circle cx="690.75" cy="283.04" r="3.5" fill="#fff" stroke="#33454e" stroke-width="2"/>
+            <circle cx="803.25" cy="266.43" r="3.5" fill="#fff" stroke="#33454e" stroke-width="2"/>
+            <circle cx="915.75" cy="234.31" r="3.5" fill="#fff" stroke="#33454e" stroke-width="2"/>
+            </g>
+            <text x="888" y="229" fill="#33454e" font-size="11.5" text-anchor="end">794 mil</text>
+            <g fill="#65727a" font-size="12" font-weight="600" text-anchor="middle">
+          <text x="128.25" y="332">S1</text>
+          <text x="240.75" y="332">S2</text>
+          <text x="353.25" y="332">S3</text>
+          <text x="465.75" y="332">S4</text>
+          <text x="578.25" y="332">S5</text>
+          <text x="690.75" y="332">S6</text>
+          <text x="803.25" y="332">S7</text>
+          <text x="915.75" y="332">S8</text>
+            </g>
+            <g>
+          <text class="negative" x="128.25" y="358" fill="#c25555" font-size="12" font-weight="600" text-anchor="middle">−20.100</text>
+          <text class="negative" x="240.75" y="358" fill="#c25555" font-size="12" font-weight="600" text-anchor="middle">−20.100</text>
+          <text class="positive" x="353.25" y="358" fill="#1c9b76" font-size="12" font-weight="600" text-anchor="middle">7.400</text>
+          <text class="positive" x="465.75" y="358" fill="#1c9b76" font-size="12" font-weight="600" text-anchor="middle">66.830</text>
+          <text class="positive" x="578.25" y="358" fill="#1c9b76" font-size="12" font-weight="600" text-anchor="middle">17.200</text>
+          <text class="positive" x="690.75" y="358" fill="#1c9b76" font-size="12" font-weight="600" text-anchor="middle">217.200</text>
+          <text class="positive" x="803.25" y="358" fill="#1c9b76" font-size="12" font-weight="600" text-anchor="middle">543.000</text>
+          <text class="positive" x="915.75" y="358" fill="#1c9b76" font-size="12" font-weight="600" text-anchor="middle">2.206.000</text>
+            </g>
+            <text x="62" y="358" fill="#65727a" font-size="11.5" text-anchor="end">Resultado</text>
+          </svg>
+        <div class="chart-mobile">
+        <div class="chart-mobile__row">
+          <span class="cm-s">S1</span>
+          <span class="cm-detail">Receita <b>0</b> · Custos <b>20.100</b></span>
+          <span class="cm-result negative">−20.100</span>
         </div>
-        <table class="comparison comparison--figures figures-mobile">
-          <thead><tr><th>Semestre</th><th>Receita</th><th>Custos</th><th>Resultado</th></tr></thead>
-          <tbody>
-            <tr><td>S1</td><td>0</td><td>20.100</td><td class="negative">−20.100</td></tr>
-            <tr><td>S2</td><td>0</td><td>20.100</td><td class="negative">−20.100</td></tr>
-            <tr><td class="is-key">S3</td><td class="is-key">27.500</td><td class="is-key">20.100</td><td class="is-key positive">7.400</td></tr>
-            <tr><td>S4</td><td>102.230</td><td>35.400</td><td class="positive">66.830</td></tr>
-            <tr><td>S5</td><td>300.000</td><td>282.800</td><td class="positive">17.200</td></tr>
-            <tr><td>S6</td><td>500.000</td><td>282.800</td><td class="positive">217.200</td></tr>
-            <tr><td>S7</td><td>1.000.000</td><td>457.000</td><td class="positive">543.000</td></tr>
-            <tr><td>S8</td><td>3.000.000</td><td>794.000</td><td class="positive">2.206.000</td></tr>
-          </tbody>
-        </table>
-        <p class="table-panel__legend">Barras: resultado relativo por semestre</p>
+        <div class="chart-mobile__row">
+          <span class="cm-s">S2</span>
+          <span class="cm-detail">Receita <b>0</b> · Custos <b>20.100</b></span>
+          <span class="cm-result negative">−20.100</span>
+        </div>
+        <div class="chart-mobile__row is-key">
+          <span class="cm-s">S3</span>
+          <span class="cm-detail">Receita <b>27.500</b> · Custos <b>20.100</b></span>
+          <span class="cm-result positive">7.400</span>
+        </div>
+        <div class="chart-mobile__row">
+          <span class="cm-s">S4</span>
+          <span class="cm-detail">Receita <b>102.230</b> · Custos <b>35.400</b></span>
+          <span class="cm-result positive">66.830</span>
+        </div>
+        <div class="chart-mobile__row">
+          <span class="cm-s">S5</span>
+          <span class="cm-detail">Receita <b>300.000</b> · Custos <b>282.800</b></span>
+          <span class="cm-result positive">17.200</span>
+        </div>
+        <div class="chart-mobile__row">
+          <span class="cm-s">S6</span>
+          <span class="cm-detail">Receita <b>500.000</b> · Custos <b>282.800</b></span>
+          <span class="cm-result positive">217.200</span>
+        </div>
+        <div class="chart-mobile__row">
+          <span class="cm-s">S7</span>
+          <span class="cm-detail">Receita <b>1.000.000</b> · Custos <b>457.000</b></span>
+          <span class="cm-result positive">543.000</span>
+        </div>
+        <div class="chart-mobile__row">
+          <span class="cm-s">S8</span>
+          <span class="cm-detail">Receita <b>3.000.000</b> · Custos <b>794.000</b></span>
+          <span class="cm-result positive">2.206.000</span>
+        </div>
+        </div>
+        <p class="table-panel__legend">Barras: receita · Linha: custos (R$ 20,1 mil → R$ 794 mil) · Números: resultado por semestre</p>
       </div>
       <p class="small" style="margin-top:30px">Resultado positivo a partir do 3º semestre; do 5º em diante o time está completo.</p>
     </section>
