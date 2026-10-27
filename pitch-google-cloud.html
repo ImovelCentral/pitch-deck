@@ -72,11 +72,22 @@
         }
 
         .reveal h2 {
+            align-self: flex-start;
             color: var(--brand-blue);
             border-bottom: 3px solid var(--brand-blue);
             display: inline-block;
-            margin-bottom: 40px;
-            padding-bottom: 10px;
+            font-size: 1em;
+            line-height: 1.15;
+            margin-bottom: 28px;
+            max-width: 94%;
+            padding-bottom: 9px;
+            text-wrap: balance;
+        }
+
+        .reveal p {
+            font-size: 0.56em;
+            line-height: 1.5;
+            max-width: 82ch;
         }
 
         /* Reset de bordas para imagens - Evita borda preta na impressão */
@@ -100,13 +111,14 @@
         }
 
         ul {
-            margin-top: 20px;
+            margin-top: 16px;
         }
 
         li {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             color: #444;
-            font-size: 0.85em;
+            font-size: 0.6em;
+            line-height: 1.45;
         }
 
         .capa {
@@ -132,9 +144,12 @@
         .highlight-box {
             background: var(--light-grey);
             border-left: 8px solid var(--brand-blue);
-            padding: 20px 30px;
-            margin-top: 30px;
+            padding: 16px 24px;
+            margin-top: 24px;
+            font-size: 0.58em;
             font-style: italic;
+            line-height: 1.5;
+            max-width: 82ch;
         }
 
         .step-number {
@@ -157,7 +172,7 @@
 
         .infra-grid {
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            font-size: 0.7em;
+            font-size: 0.6em;
         }
 
         .infra-card {
@@ -510,7 +525,7 @@
                 <img src="LOGO_05.png" class="logo-corner">
                 <div class="content-wrapper">
                     <h2><span class="step-number">4</span>Infraestrutura Cloud</h2>
-                    <p style="font-size: 0.8em; margin-bottom: 10px;">Construído com a visão de expansão através da
+                    <p style="font-size: 0.62em; margin-bottom: 10px;">Construído com a visão de expansão através da
                             <strong>Computação em Nuvem</strong>:
                     </p>
                     <div class="infra-grid">
@@ -561,7 +576,7 @@
                 <img src="LOGO_05.png" class="logo-corner">
                 <div class="content-wrapper">
                     <h2><span class="step-number">7</span>Modelo de Negócio</h2>
-                    <div style="font-size: 0.75em;">
+                    <div style="font-size: 0.58em; line-height: 1.6;">
                         <p>• <strong>Fase 1:</strong> Crescimento e validação (Gratuito).</p>
                         <p>• <strong>Fase 2:</strong> Destaques B2B e anúncios estratégicos.</p>
                         <p>• <strong>Fase 3:</strong> SaaS Imobiliário (CRM e Automação).</p>
@@ -614,7 +629,7 @@
                 <img src="LOGO_05.png" class="logo-corner">
                 <div class="content-wrapper">
                     <h2><span class="step-number">11</span>Visão</h2>
-                    <p style="font-size: 1.2em;">Ser o principal <strong>hub imobiliário regional</strong> do Brasil.
+                    <p style="font-size: 0.9em;">Ser o principal <strong>hub imobiliário regional</strong> do Brasil.
                     </p>
                     <div class="highlight-box">
                         "Transformando um mercado fragmentado em um ecossistema inteligente, conectado e orientado por
@@ -626,7 +641,7 @@
                 <img src="LOGO_05.png" class="logo-corner">
                 <div class="content-wrapper">
                     <h2><span class="step-number">12</span>Equipe Imóvel Central</h2>
-                    <p class="team-intro" style="font-size: 0.8em; margin-bottom: 30px;">Fundadores focados na transformação do mercado
+                    <p class="team-intro" style="font-size: 0.62em; margin-bottom: 24px;">Fundadores focados na transformação do mercado
                         imobiliário regional.</p>
 
                     <div class="team-grid">
@@ -634,34 +649,34 @@
                         <div class="team-card">
                             <img src="Bruno.png" alt="Bruno Carazato"
                                 style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;">
-                            <h3 style="font-size: 0.8em; margin: 0; color: var(--dark-grey);">Bruno Carazato</h3>
+                            <h3 style="font-size: 0.55em; margin: 0; color: var(--dark-grey);">Bruno Carazato</h3>
                             <p
-                                style="font-size: 0.5em; color: var(--brand-blue); font-weight: bold; text-transform: uppercase; margin-top: 5px;">
+                                style="font-size: 0.4em; color: var(--brand-blue); font-weight: bold; text-transform: uppercase; margin-top: 5px;">
                                 Founder</p>
-                            <p style="color: var(--brand-blue); text-transform: uppercase; font-size: small;">
+                            <p style="color: var(--brand-blue); text-transform: uppercase; font-size: 0.36em; line-height: 1.4;">
                                 Product Manager, Professor, Software Engineering Manager</p>
                         </div>
 
                         <div class="team-card">
                             <img src="Joao.png" alt="João Lucas Buzzo"
                                 style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;">
-                            <h3 style="font-size: 0.8em; margin: 0; color: var(--dark-grey);">João Lucas Buzzo</h3>
+                            <h3 style="font-size: 0.55em; margin: 0; color: var(--dark-grey);">João Lucas Buzzo</h3>
                             <p
-                                style="font-size: 0.5em; color: var(--brand-blue); font-weight: bold; text-transform: uppercase; margin-top: 5px;">
+                                style="font-size: 0.4em; color: var(--brand-blue); font-weight: bold; text-transform: uppercase; margin-top: 5px;">
                                 Cofounder</p>
-                            <p style="color: var(--brand-blue); text-transform: uppercase; font-size: small;">
+                            <p style="color: var(--brand-blue); text-transform: uppercase; font-size: 0.36em; line-height: 1.4;">
                                 Software Engineer</p>
                         </div>
 
                         <div class="team-card">
                             <img src="Luis.png" alt="Luis Felipe dos Santos"
                                 style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;">
-                            <h3 style="font-size: 0.8em; margin: 0; color: var(--dark-grey);">Luis F. dos Santos
+                            <h3 style="font-size: 0.55em; margin: 0; color: var(--dark-grey);">Luis F. dos Santos
                             </h3>
                             <p
-                                style="font-size: 0.5em; color: var(--brand-blue); font-weight: bold; text-transform: uppercase; margin-top: 5px;">
+                                style="font-size: 0.4em; color: var(--brand-blue); font-weight: bold; text-transform: uppercase; margin-top: 5px;">
                                 Cofounder</p>
-                            <p style="color: var(--brand-blue); text-transform: uppercase; font-size: small;">
+                            <p style="color: var(--brand-blue); text-transform: uppercase; font-size: 0.36em; line-height: 1.4;">
                                 Software Engineer</p>
                         </div>
 

@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/white.min.css">
   <link rel="stylesheet" href="fonts.css">
-  <link rel="stylesheet" href="deck.css?v=20261016-3">
+  <link rel="stylesheet" href="deck.css?v=20261027-19">
 </head>
 <body>
   <a class="back-home" href="index.html" title="Voltar para a apresentação inicial">← Apresentação inicial</a>
@@ -179,26 +179,58 @@
 
     <section class="dense">
       <div class="brand">Fluxo de renda</div>
-      <h2>Receita, custos e resultado (R$) em oito semestres.</h2>
-      <table class="comparison">
-        <thead><tr><th>Semestre</th><th>Receita</th><th>Custos totais</th><th>Lucro</th></tr></thead>
-        <tbody>
-          <tr><td>S1</td><td>0</td><td>20.100</td><td class="no">−20.100</td></tr>
-          <tr><td>S2</td><td>0</td><td>20.100</td><td class="no">−20.100</td></tr>
-          <tr><td>S3</td><td>27.500</td><td>20.100</td><td class="check">7.400</td></tr>
-          <tr><td>S4</td><td>102.230</td><td>35.400</td><td class="check">66.830</td></tr>
-          <tr><td>S5</td><td>300.000</td><td>282.800</td><td class="check">17.200</td></tr>
-          <tr><td>S6</td><td>500.000</td><td>282.800</td><td class="check">217.200</td></tr>
-          <tr><td>S7</td><td>1.000.000</td><td>457.000</td><td class="check">543.000</td></tr>
-          <tr><td>S8</td><td>3.000.000</td><td>794.000</td><td class="check">2.206.000</td></tr>
-        </tbody>
-      </table>
+      <h2>Receita, custos e resultado por semestre.</h2>
+      <div class="table-panel">
+        <div class="table-panel__head">
+          <span>Fluxo de renda</span>
+          <span>Valores em R$</span>
+        </div>
+        <div class="figures-desktop">
+          <table class="comparison comparison--figures">
+            <thead>
+              <tr>
+                <th></th><th>S1</th><th>S2</th><th class="is-key">S3<span class="breakeven-tag">breakeven</span></th><th>S4</th><th>S5</th><th>S6</th><th>S7</th><th>S8</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Receita</td><td>0</td><td>0</td><td class="is-key">27.500</td><td>102.230</td><td>300.000</td><td>500.000</td><td>1.000.000</td><td>3.000.000</td></tr>
+              <tr><td>Custos</td><td>20.100</td><td>20.100</td><td class="is-key">20.100</td><td>35.400</td><td>282.800</td><td>282.800</td><td>457.000</td><td>794.000</td></tr>
+              <tr>
+                <td>Resultado</td>
+                <td class="negative"><span class="result-value">−20.100</span><span class="result-bar" aria-hidden="true"><span style="width:10%"></span></span></td>
+                <td class="negative"><span class="result-value">−20.100</span><span class="result-bar" aria-hidden="true"><span style="width:10%"></span></span></td>
+                <td class="is-key positive"><span class="result-value">7.400</span><span class="result-bar" aria-hidden="true"><span style="width:8%"></span></span></td>
+                <td class="positive"><span class="result-value">66.830</span><span class="result-bar" aria-hidden="true"><span style="width:18%"></span></span></td>
+                <td class="positive"><span class="result-value">17.200</span><span class="result-bar" aria-hidden="true"><span style="width:9%"></span></span></td>
+                <td class="positive"><span class="result-value">217.200</span><span class="result-bar" aria-hidden="true"><span style="width:32%"></span></span></td>
+                <td class="positive"><span class="result-value">543.000</span><span class="result-bar" aria-hidden="true"><span style="width:50%"></span></span></td>
+                <td class="positive"><span class="result-value">2.206.000</span><span class="result-bar" aria-hidden="true"><span style="width:100%"></span></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <table class="comparison comparison--figures figures-mobile">
+          <thead><tr><th>Semestre</th><th>Receita</th><th>Custos</th><th>Resultado</th></tr></thead>
+          <tbody>
+            <tr><td>S1</td><td>0</td><td>20.100</td><td class="negative">−20.100</td></tr>
+            <tr><td>S2</td><td>0</td><td>20.100</td><td class="negative">−20.100</td></tr>
+            <tr><td class="is-key">S3</td><td class="is-key">27.500</td><td class="is-key">20.100</td><td class="is-key positive">7.400</td></tr>
+            <tr><td>S4</td><td>102.230</td><td>35.400</td><td class="positive">66.830</td></tr>
+            <tr><td>S5</td><td>300.000</td><td>282.800</td><td class="positive">17.200</td></tr>
+            <tr><td>S6</td><td>500.000</td><td>282.800</td><td class="positive">217.200</td></tr>
+            <tr><td>S7</td><td>1.000.000</td><td>457.000</td><td class="positive">543.000</td></tr>
+            <tr><td>S8</td><td>3.000.000</td><td>794.000</td><td class="positive">2.206.000</td></tr>
+          </tbody>
+        </table>
+        <p class="table-panel__legend">Barras: resultado relativo por semestre</p>
+      </div>
       <p class="small" style="margin-top:30px">Resultado positivo a partir do 3º semestre; do 5º em diante o time está completo.</p>
     </section>
 
     <section>
       <div class="brand">Equipe</div>
-      <h2>Produto, engenharia e execução para transformar uma tese regional em plataforma escalável.</h2>
+      <h2>Produto, engenharia e execução.</h2>
+      <p class="lead">Para transformar uma tese regional em plataforma escalável.</p>
       <div class="team">
         <div class="person"><img src="Bruno.png" alt="Bruno Carazato"><h3>Bruno Carazato</h3><p>Founder<br>Produto, negócios e tecnologia</p></div>
         <div class="person"><img src="Joao.png" alt="João Lucas Buzzo"><h3>João Lucas Buzzo</h3><p>Cofounder<br>Engenharia de software</p></div>

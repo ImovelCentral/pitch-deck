@@ -6,6 +6,8 @@
   --ic-soft: #f2f8fb;
   --ic-line: #dcecf3;
   --ic-green: #1c9b76;
+  --ic-table-ink: #3f4f58;
+  --ic-table-strong: #33454e;
   /* Híbrido tipográfico: Poppins (fonte oficial da marca) nos títulos e números;
      Segoe/Roboto no corpo de texto, preserva legibilidade e o espaço do palco. */
   --ic-font-display: "Poppins", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -20,13 +22,14 @@
 .content-wrapper { display: block; }
 .reveal h1, .reveal h2, .reveal h3, .reveal p { text-transform: none; }
 .reveal h1 { color: var(--ic-navy); font-family: var(--ic-font-display); font-size: 2.1em; letter-spacing: -.01em; margin: 0 0 .22em; }
-.reveal .slides > section:not(.cover) .content-wrapper > h2 { border-bottom: 3px solid var(--ic-blue); color: var(--ic-blue); display: inline-block; font-size: 1.3em; margin: 0 0 40px; padding-bottom: 10px; width: fit-content; }
+.reveal .slides > section:not(.cover) .content-wrapper > h2 { border-bottom: 3px solid var(--ic-blue); color: var(--ic-blue); display: inline-block; font-size: 1em; line-height: 1.14; margin: 0 0 28px; max-width: 94%; padding-bottom: 10px; text-wrap: balance; width: fit-content; }
 .reveal .slides > section:not(.cover) .content-wrapper > h2:before { background: var(--ic-blue); border-radius: 50px; color: white; content: counter(pitch-slide); display: inline-block; font-size: .5em; margin-right: 15px; padding: 4px 12px; vertical-align: middle; }
-.reveal h2 { color: var(--ic-navy); font-family: var(--ic-font-display); font-size: 1.3em; letter-spacing: -.01em; margin: 0 0 .68em; }
-.reveal h3 { color: var(--ic-navy); font-family: var(--ic-font-display); font-size: .68em; letter-spacing: -.005em; margin: 0 0 .45em; }
-.reveal p { font-size: .68em; line-height: 1.45; }
+.reveal h2 { color: var(--ic-navy); font-family: var(--ic-font-display); font-size: 1em; letter-spacing: -.01em; line-height: 1.14; margin: 0 0 .68em; text-wrap: balance; }
+.reveal h3 { color: var(--ic-navy); font-family: var(--ic-font-display); font-size: .62em; letter-spacing: -.005em; margin: 0 0 .45em; }
+.reveal p { font-size: .58em; line-height: 1.5; }
+.reveal .content-wrapper > p { max-width: 82ch; }
 .reveal ul { margin: .45em 0 0 .7em; }
-.reveal li { color: var(--ic-ink); font-size: .67em; line-height: 1.35; margin: .42em 0; }
+.reveal li { color: var(--ic-ink); font-size: .56em; line-height: 1.42; margin: .4em 0; }
 .reveal strong { color: var(--ic-navy); }
 .reveal section img { border: 0; box-shadow: none; background: none; }
 
@@ -37,40 +40,97 @@
 .cover .footer { color: #888; font-size: .6em; letter-spacing: 2px; margin-top: 100px; text-transform: uppercase; }
 
 .brand { display: none; }
-.kicker { color: var(--ic-muted); font-size: .52em; margin: -7px 0 22px; }
-.statement { border-left: 6px solid var(--ic-blue); color: var(--ic-navy); font-size: .88em; line-height: 1.35; margin: 24px 0 0; padding: 14px 22px; }
-.small { color: var(--ic-muted); font-size: .46em !important; }
+.kicker { color: var(--ic-muted); font-size: .5em; margin: -7px 0 22px; }
+.lead { color: var(--ic-muted); font-size: .55em; line-height: 1.42; margin: -16px 0 26px; max-width: 80ch; }
+.statement { border-left: 6px solid var(--ic-blue); color: var(--ic-navy); font-size: .72em; line-height: 1.42; margin: 24px 0 0; padding: 13px 20px; }
+.small { color: var(--ic-muted); font-size: .42em !important; }
 
 .grid-2, .grid-3, .grid-4 { display: grid; gap: 16px; }
 .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .card { background: var(--ic-soft); border-radius: 10px; padding: 20px; }
-.card p { font-size: .53em; margin: 0; }
+.card p { font-size: .46em; line-height: 1.42; margin: 0; }
 .card .icon { align-items: center; background: var(--ic-blue); border-radius: 50%; color: #fff; display: flex; font-size: .55em; font-weight: 700; height: 28px; justify-content: center; margin-bottom: 13px; width: 28px; }
+.card .icon svg { display: block; height: 15px; width: 15px; }
+.card.benefit .icon { height: 36px; margin-bottom: 15px; width: 36px; }
+.card.benefit .icon svg { height: 19px; width: 19px; }
 .card .number { color: var(--ic-blue); font-family: var(--ic-font-display); font-size: 1.2em; font-weight: 800; line-height: 1; margin-bottom: 9px; }
 
 .flow { align-items: stretch; display: grid; gap: 13px; grid-template-columns: repeat(3, 1fr); margin-top: 24px; }
 .flow-item { border: 1px solid var(--ic-line); border-radius: 10px; padding: 15px; position: relative; }
 .flow-item:not(:last-child):after { color: var(--ic-blue); content: "→"; font-size: .7em; position: absolute; right: -12px; top: 42%; z-index: 2; }
-.flow-item h3 { font-size: .63em; }
-.flow-item p { font-size: .48em; margin: 0; }
+.flow-item h3 { font-size: .6em; }
+.flow-item p { font-size: .46em; line-height: 1.42; margin: 0; }
 
-.comparison { border: 1px solid var(--ic-line); border-collapse: separate; border-radius: 10px; border-spacing: 0; font-size: .52em; width: 100%; }
-.comparison th { background: var(--ic-navy); color: white; font-family: var(--ic-font-display); font-size: .92em; font-weight: 600; letter-spacing: .04em; padding: 12px 14px; text-align: left; text-transform: uppercase; }
-.comparison th, .comparison td { border-bottom: 1px solid var(--ic-line); padding: 12px 14px; }
+/* Experiência do cliente e do parceiro: dois cartões com ícone, micro-rótulo
+   e lista de checagem. */
+.experience-grid { display: grid; gap: 18px; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 4px; }
+.experience-card { background: #f6fafc; border: 1px solid #e4f1f6; border-radius: 14px; box-shadow: 0 8px 24px rgba(16, 34, 44, .04); padding: 20px 22px; }
+.experience-head { align-items: center; display: flex; gap: 12px; margin-bottom: 12px; }
+.experience-icon { align-items: center; background: var(--ic-blue); border-radius: 50%; color: #fff; display: flex; flex: 0 0 auto; height: 38px; justify-content: center; width: 38px; }
+.experience-icon svg { display: block; height: 19px; width: 19px; }
+.experience-eyebrow { color: var(--ic-blue); display: block; font-family: var(--ic-font-display); font-size: .34em; font-weight: 700; letter-spacing: .08em; margin-bottom: 1px; text-transform: uppercase; }
+.experience-card h3 { font-size: .62em; margin: 0; }
+.experience-list { list-style: none; margin: 0; padding: 0; }
+.experience-list li { align-items: flex-start; border-bottom: 1px solid #e8f3f8; color: var(--ic-ink); display: flex; font-size: .48em; gap: 10px; line-height: 1.45; margin: 0; padding: 9px 0; }
+.experience-list li:last-child { border-bottom: 0; padding-bottom: 0; }
+.experience-list li:before { align-items: center; background: rgba(0, 174, 239, .12); border-radius: 50%; color: var(--ic-blue); content: "✓"; display: flex; flex: 0 0 20px; font-family: var(--ic-font-display); font-size: .85em; font-weight: 700; height: 20px; justify-content: center; line-height: 1; margin-top: 2px; width: 20px; }
+
+/* Matriz comparativa: cabeçalho leve, linhas hairline e uma única coluna
+   em destaque. Sem zebra, sem hover e sem pills — o contraste vem da coluna,
+   não de cada célula. */
+.comparison { border-collapse: separate; border-spacing: 0; color: var(--ic-table-ink); font-family: var(--ic-font-display); font-size: .4em; margin: 0; width: 100%; }
+.comparison:not(.comparison--figures) { table-layout: fixed; }
+.comparison:not(.comparison--figures) th:first-child,
+.comparison:not(.comparison--figures) td:first-child { width: 38%; }
+.comparison th { background: transparent; border-bottom: 1px solid var(--ic-line); color: var(--ic-muted); font-family: var(--ic-font-display); font-size: .76em; font-weight: 700; letter-spacing: .06em; padding: 0 16px 11px; text-align: left; text-transform: uppercase; vertical-align: bottom; }
+.comparison th:not(:first-child) { text-align: center; }
+.comparison th.is-key { background: #e2f6fe; border-radius: 10px 10px 0 0; box-shadow: inset 0 2px 0 var(--ic-blue); color: var(--ic-blue); }
+.comparison td { border-bottom: 1px solid #eef5f8; padding: 12px 16px; vertical-align: middle; }
 .comparison td:not(:first-child) { text-align: center; }
-.comparison th:first-child { border-top-left-radius: 10px; }
-.comparison th:last-child { background: #17394a; border-top-right-radius: 10px; box-shadow: inset 0 -3px 0 var(--ic-blue); }
+.comparison td:first-child { color: var(--ic-table-strong); font-weight: 600; }
+.comparison td.is-key { background: #e2f6fe; }
 .comparison tbody tr:last-child td { border-bottom: 0; }
-.comparison tbody tr:last-child td:first-child { border-bottom-left-radius: 10px; }
-.comparison tbody tr:last-child td:last-child { border-bottom-right-radius: 10px; }
-.comparison tbody tr:nth-child(even) td:not(:last-child) { background: var(--ic-soft); }
-.comparison tbody td:last-child { background: #e9f7fd; }
-.comparison tbody tr:hover td { background: #dcf1fa; }
-.comparison tbody td:first-child { color: var(--ic-navy); font-weight: 600; }
-.check { background: rgba(28, 155, 118, .12); border-radius: 6px; color: var(--ic-green); display: inline-block; font-weight: 700; padding: 2px 9px; }
-.no { background: rgba(101, 114, 122, .1); border-radius: 6px; color: #77848b; display: inline-block; font-weight: 600; padding: 2px 9px; }
+.comparison .yes { color: var(--ic-green); font-weight: 600; }
+.comparison .na { color: #aebbc1; font-weight: 500; }
+
+/* Tabela financeira: painel arejado, linhas em faixas e micro-barras no
+   resultado. A leitura cresce da esquerda para a direita. */
+.table-panel { background: #fff; border: 1px solid #e4f1f6; border-radius: 18px; box-shadow: 0 14px 34px rgba(16, 34, 44, .06); padding: 20px 24px 22px; }
+.table-panel__head { align-items: baseline; color: var(--ic-muted); display: flex; font-family: var(--ic-font-display); font-size: .4em; font-weight: 600; justify-content: space-between; letter-spacing: .06em; margin: 0 0 10px; padding: 0 4px; text-transform: uppercase; }
+.table-panel__legend { color: var(--ic-muted); font-family: var(--ic-font-display); font-size: .34em; letter-spacing: .02em; margin: 14px 4px 0; }
+
+.comparison--figures { border-spacing: 0 9px; font-size: .4em; }
+.comparison--figures th { border: 0; border-bottom: 1px solid #e4f1f6; font-size: .76em; letter-spacing: .06em; padding: 2px 10px 13px; }
+.comparison--figures th:first-child { text-align: left; }
+.comparison--figures th:not(:first-child) { text-align: right; }
+.comparison--figures th.is-key { text-align: right; }
+.comparison--figures td { border: 0; padding: 18px 10px; }
+.comparison--figures tbody td { background: #f5fafc; }
+.comparison--figures tbody td:first-child { border-radius: 10px 0 0 10px; text-align: left; width: 15%; }
+.comparison--figures tbody td:last-child { border-radius: 0 10px 10px 0; }
+.comparison--figures td:not(:first-child) { font-variant-numeric: tabular-nums; font-weight: 500; text-align: right; }
+.comparison--figures tbody tr:last-child td { background: #e8f7fe; font-weight: 600; }
+.comparison--figures tbody tr:last-child td.is-key { background: #dff4fd; }
+.comparison--figures .positive { color: var(--ic-green); }
+.comparison--figures .negative { color: #c25555; }
+.breakeven-tag { background: rgba(28, 155, 118, .12); border-radius: 999px; color: var(--ic-green); display: inline-block; font-size: .58em; letter-spacing: .05em; margin: 4px 0 0 4px; padding: 1px 6px; vertical-align: middle; }
+.result-value { display: block; }
+.result-bar { background: #cfe7f1; border-radius: 999px; display: block; height: 4px; margin: 7px 0 0 auto; overflow: hidden; width: 100%; }
+.result-bar > span { background: currentColor; border-radius: inherit; display: block; height: 100%; }
+.figures-mobile { display: none; }
+
+/* Matrizes comparativas: mesmo painel e faixas da tabela financeira,
+   com a última coluna em destaque. */
+.comparison.comparison--matrix { border-spacing: 0 9px; }
+.comparison.comparison--matrix th { border: 0; border-bottom: 1px solid #e4f1f6; padding: 2px 16px 13px; }
+.comparison.comparison--matrix td { border: 0; padding: 18px 14px; }
+.comparison.comparison--matrix tbody td { background: #f5fafc; }
+.comparison.comparison--matrix tbody td:first-child { border-radius: 10px 0 0 10px; }
+.comparison.comparison--matrix tbody td:last-child { border-radius: 0 10px 10px 0; }
+.table-panel__legend .legend-yes { color: var(--ic-green); font-weight: 700; }
+.table-panel__legend .legend-na { color: #aebbc1; font-weight: 600; }
 
 .metric { border-left: 3px solid var(--ic-blue); padding: 5px 0 5px 15px; }
 .metric b { color: var(--ic-navy); display: block; font-family: var(--ic-font-display); font-size: .94em; }
@@ -81,17 +141,17 @@
 .milestone { margin: 0 0 21px; position: relative; }
 .milestone:before { background: var(--ic-blue); border: 4px solid white; border-radius: 50%; box-shadow: 0 0 0 2px var(--ic-blue); content: ""; height: 8px; left: -37px; position: absolute; top: 4px; width: 8px; }
 .milestone h3 { margin-bottom: 4px; }
-.milestone p { font-size: .51em; margin: 0; }
+.milestone p { font-size: .47em; line-height: 1.42; margin: 0; }
 
 .team { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); margin-top: 20px; text-align: center; }
 .person { border-bottom: 4px solid var(--ic-blue); border-radius: 10px; padding: 14px; }
 .person img { border-radius: 50%; height: 104px; margin: 0 0 10px; object-fit: cover; width: 104px; }
-.person h3 { font-size: .64em; margin: 0; }
-.person p { color: var(--ic-muted); font-size: .44em; margin: 5px 0 0; }
+.person h3 { font-size: .6em; margin: 0; }
+.person p { color: var(--ic-muted); font-size: .42em; line-height: 1.4; margin: 5px 0 0; }
 .cta { background: var(--ic-navy); border-radius: 16px; color: white; margin: 24px 0 0; padding: 24px 30px; }
 .cta h2, .cta p, .cta strong { color: white; }
 .cta h2 { font-size: 1.05em; margin-bottom: 10px; }
-.cta p { font-size: .57em; margin: 0; }
+.cta p { font-size: .54em; margin: 0; }
 .contact { color: var(--ic-muted); font-size: .5em; margin-top: 26px; text-align: center; }
 
 /* Link de retorno à apresentação inicial. Fica fora do palco do Reveal.js,
@@ -118,7 +178,7 @@
 /* No desktop, o título longo da tese ocupa quatro linhas no tamanho padrão.
    Esta variação preserva espaço para a conclusão dentro do palco do slide. */
 @media (min-width: 769px) {
-  .reveal .slides > section.thesis .content-wrapper > h2 { font-size: 1.1em; margin-bottom: 28px; }
+  .reveal .slides > section.thesis .content-wrapper > h2 { font-size: .96em; margin-bottom: 26px; }
 }
 
 @media print { .reveal .slides section img { border: 0 !important; box-shadow: none !important; } }
@@ -136,8 +196,9 @@
   .card { padding: 10px; }
   .card h3 { font-size: .45em; }
   .card p { font-size: .35em; }
-  .comparison { font-size: .36em; }
-  .comparison th, .comparison td { padding: 7px 5px; }
+  .comparison:not(.comparison--figures) { font-size: .5em; }
+  .figures-desktop { display: none; }
+  .figures-mobile { display: table; }
   .team { gap: 7px; }
   .person { padding: 7px; }
   .person img { height: 56px; width: 56px; }
@@ -167,6 +228,16 @@ html.mobile-layout .cover .footer { font-size: .36em; margin-top: 46px; }
 html.mobile-layout .grid-2,
 html.mobile-layout .grid-3,
 html.mobile-layout .grid-4 { gap: 9px; grid-template-columns: 1fr; }
+html.mobile-layout .partner-product .lead { display: none; }
+html.mobile-layout .experience-grid { gap: 8px; grid-template-columns: 1fr; margin-top: 2px; }
+html.mobile-layout .experience-card { padding: 9px 12px; }
+html.mobile-layout .experience-head { gap: 9px; margin-bottom: 5px; }
+html.mobile-layout .experience-icon { height: 28px; width: 28px; }
+html.mobile-layout .experience-icon svg { height: 14px; width: 14px; }
+html.mobile-layout .experience-eyebrow { display: none; }
+html.mobile-layout .experience-card h3 { font-size: .46em; }
+html.mobile-layout .partner-product .experience-list li { font-size: .36em; gap: 8px; line-height: 1.32; padding: 4px 0; }
+html.mobile-layout .partner-product .experience-list li:before { flex-basis: 15px; height: 15px; margin-top: 1px; width: 15px; }
 html.mobile-layout .card { padding: 11px 13px; }
 html.mobile-layout .card .icon { font-size: .42em; height: 22px; margin-bottom: 7px; width: 22px; }
 html.mobile-layout .card .number { font-size: .75em; margin-bottom: 4px; }
@@ -178,9 +249,39 @@ html.mobile-layout .flow-item { padding: 10px 13px; }
 html.mobile-layout .flow-item h3 { font-size: .52em; margin-bottom: 3px; }
 html.mobile-layout .flow-item p { font-size: .41em; }
 html.mobile-layout .flow-item:not(:last-child):after { bottom: -11px; content: "↓"; font-size: .55em; left: 50%; right: auto; top: auto; }
-html.mobile-layout .comparison { font-size: .35em; }
-html.mobile-layout .comparison th,
-html.mobile-layout .comparison td { padding: 7px 5px; }
+/* No celular, cada linha da matriz vira um cartão com rótulo e valores.
+   A tabela financeira mantém o formato tabular, porém compacto. */
+html.mobile-layout .comparison:not(.comparison--figures) { display: block; font-size: .4em; }
+html.mobile-layout .comparison:not(.comparison--figures) thead { display: none; }
+html.mobile-layout .comparison:not(.comparison--figures) tbody,
+html.mobile-layout .comparison:not(.comparison--figures) tr,
+html.mobile-layout .comparison:not(.comparison--figures) td { display: block; }
+html.mobile-layout .comparison:not(.comparison--figures) tr { border: 1px solid var(--ic-line); border-radius: 10px; margin-bottom: 8px; overflow: hidden; }
+html.mobile-layout .comparison:not(.comparison--figures) td,
+html.mobile-layout .comparison:not(.comparison--figures) td:last-child { background: #fff; border: 0; border-radius: 0; padding: 3px 10px; text-align: left; }
+html.mobile-layout .comparison:not(.comparison--figures) td:first-child { background: var(--ic-soft); color: var(--ic-navy); font-size: .95em; padding: 5px 10px; width: auto; }
+html.mobile-layout .comparison:not(.comparison--figures) td:not(:first-child) { align-items: baseline; display: flex; gap: 12px; justify-content: space-between; text-align: right; }
+html.mobile-layout .comparison:not(.comparison--figures) td[data-label]:before { color: var(--ic-muted); content: attr(data-label); font-size: .9em; font-weight: 600; text-align: left; }
+html.mobile-layout .table-panel { border-radius: 14px; box-shadow: none; padding: 12px 10px 14px; }
+html.mobile-layout .table-panel__head { font-size: .32em; margin-bottom: 4px; padding: 0 2px; }
+html.mobile-layout .table-panel__head span:first-child { display: none; }
+html.mobile-layout .table-panel__head span:last-child { margin-left: auto; }
+html.mobile-layout .table-panel__legend { display: none; }
+html.mobile-layout .table-panel--matrix { background: transparent; border: 0; border-radius: 0; box-shadow: none; padding: 0; }
+html.mobile-layout .table-panel--matrix .table-panel__head { display: none; }
+html.mobile-layout .figures-desktop { display: none; }
+html.mobile-layout .figures-mobile { display: table; }
+html.mobile-layout .comparison--figures { border-spacing: 0; font-size: .4em; }
+html.mobile-layout .comparison--figures th { padding: 0 3px 8px; }
+html.mobile-layout .comparison--figures td { background: transparent; border-bottom: 1px solid #eef5f8; padding: 9px 3px; }
+html.mobile-layout .comparison--figures tbody tr:last-child td { background: transparent; font-weight: 400; }
+html.mobile-layout .comparison--figures tbody td:first-child { border-radius: 0; width: auto; }
+html.mobile-layout .comparison--figures tbody td:last-child { border-radius: 0; }
+html.mobile-layout .comparison--figures tbody td.is-key { background: #e8f8fe; }
+html.mobile-layout .comparison--figures td:not(:first-child) { font-family: var(--ic-font-text); font-weight: 400; }
+html.mobile-layout .comparison--figures .positive { font-weight: 600; }
+html.mobile-layout .comparison--figures .negative { font-weight: 600; }
+html.mobile-layout .lead { font-size: .46em; line-height: 1.35; margin: -10px 0 14px; }
 html.mobile-layout .timeline { margin: 16px 0 0 10px; padding-left: 24px; }
 html.mobile-layout .milestone { margin-bottom: 13px; }
 html.mobile-layout .milestone:before { left: -31px; }
@@ -200,7 +301,7 @@ html.mobile-layout .contact { font-size: .37em; line-height: 1.4; margin-top: 18
 /* Slides com várias unidades de informação recebem uma composição compacta
    no celular. Assim, a navegação continua sendo por slide, sem conteúdo
    abaixo da área de 390 × 700 da apresentação. */
-html.mobile-layout .dense .content-wrapper > h2 { font-size: .7em; margin-bottom: 16px; padding-bottom: 6px; }
+html.mobile-layout .reveal .slides > section.dense .content-wrapper > h2 { font-size: .62em; line-height: 1.14; margin-bottom: 14px; padding-bottom: 6px; }
 html.mobile-layout .dense .grid-2,
 html.mobile-layout .dense .grid-3,
 html.mobile-layout .dense .grid-4 { gap: 6px; }
