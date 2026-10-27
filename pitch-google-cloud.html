@@ -714,8 +714,8 @@
             document.documentElement.classList.toggle('mobile-layout', isMobile);
 
             Reveal.configure({
-                width: isMobile ? 390 : 960,
-                height: 700,
+                width: isMobile ? 390 : 1152,
+                height: isMobile ? 700 : 840,
                 margin: isMobile ? 0 : 0.1
             });
             Reveal.layout();
@@ -728,8 +728,8 @@
             center: true,
             transition: 'fade',
             margin: mobileViewport.matches ? 0 : 0.1,
-            width: mobileViewport.matches ? 390 : 960,
-            height: 700,
+            width: mobileViewport.matches ? 390 : 1152,
+            height: mobileViewport.matches ? 700 : 840,
             touch: true
         });
 

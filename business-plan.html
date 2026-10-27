@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/white.min.css">
   <link rel="stylesheet" href="fonts.css">
-  <link rel="stylesheet" href="deck.css?v=20261016-2">
+  <link rel="stylesheet" href="deck.css?v=20261016-3">
 </head>
 <body>
   <a class="back-home" href="index.html" title="Voltar para a apresentação inicial">← Apresentação inicial</a>
@@ -235,11 +235,11 @@
     function updatePresentationLayout() {
       const isMobile = mobileViewport.matches;
       document.documentElement.classList.toggle('mobile-layout', isMobile);
-      Reveal.configure({ width: isMobile ? 390 : 960, height: 700, margin: isMobile ? 0 : .06 });
+      Reveal.configure({ width: isMobile ? 390 : 1152, height: isMobile ? 700 : 840, margin: isMobile ? 0 : .06 });
       Reveal.layout();
     }
     document.documentElement.classList.toggle('mobile-layout', mobileViewport.matches);
-    Reveal.initialize({ hash:true, center:true, transition:'fade', width:mobileViewport.matches ? 390 : 960, height:700, margin:mobileViewport.matches ? 0 : .06, touch:true });
+    Reveal.initialize({ hash:true, center:true, transition:'fade', width:mobileViewport.matches ? 390 : 1152, height:mobileViewport.matches ? 700 : 840, margin:mobileViewport.matches ? 0 : .06, touch:true });
     Reveal.on('ready', updatePresentationLayout);
     mobileViewport.addEventListener('change', updatePresentationLayout);
   </script>
