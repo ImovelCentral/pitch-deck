@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Flyer A4 foto · Fundo inteiro · Direção B (Clean)</title>
+<link rel="stylesheet" href="print.css">
+<style>
+  .sheet--a4 {
+    background: var(--navy);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    isolation: isolate;
+  }
+
+  /* Foto sangrando a folha inteira */
+  .photo-full {
+    inset: 0; overflow: hidden; position: absolute; z-index: -2;
+  }
+  .photo-full img {
+    /* Colagem dividida em duas fotos: aqui usamos a família da ESQUERDA
+       (mãe, filha e pai no sofá) — o flyer A usa a da direita.
+       A imagem ocupa 2× a largura da folha, deslocada para a esquerda,
+       de modo que só a metade esquerda apareça (a emenda fica fora do quadro). */
+    height: 100%; left: 0; object-fit: cover; object-position: 50% 50%;
+    position: absolute; top: 0; width: 200%;
+  }
+  /* Véu azul da direção clean: garante contraste do texto sobre a imagem */
+  .photo-full:after {
+    background: linear-gradient(180deg,
+      rgba(0,64,131,.86) 0%,
+      rgba(0,90,190,.64) 28%,
+      rgba(0,80,170,.68) 58%,
+      rgba(0,64,131,.78) 82%,
+      rgba(0,48,89,.94) 100%);
+    content: ""; inset: 0; position: absolute;
+  }
+
+  /* Marca d'água do símbolo — ancorada na faixa livre abaixo dos chips,
+     longe dos rostos da família */
+  .sheet--a4 .bg-symbol {
+    bottom: 66mm; height: 92mm; opacity: .07; right: -18mm; width: 92mm; z-index: -1;
+  }
+
+  header { align-items: flex-start; display: flex; justify-content: space-between; }
+  header .logo { height: 13mm; width: auto; }
+  .pill { background: rgba(255,255,255,.16); border: .4mm solid rgba(255,255,255,.55); color: #fff; }
+
+  .hero { margin-top: 26mm; }
+  .kicker {
+    align-items: center; color: #8FD8FF; display: flex; font-size: 10pt;
+    font-weight: 700; gap: 3mm; letter-spacing: .2em; text-transform: uppercase;
+  }
+  .kicker:after { background: #8FD8FF; content: ""; height: .7mm; width: 22mm; }
+
+  h1 {
+    font-size: 45pt; font-weight: 800; letter-spacing: -.02em; line-height: 1.03;
+    margin-top: 6mm; max-width: 180mm;
+    text-shadow: 0 .6mm 3mm rgba(0,20,40,.45);
+  }
+  h1 em { color: #8FD8FF; font-style: normal; }
+
+  .sub {
+    color: rgba(255,255,255,.9); font-size: 16pt; font-weight: 400;
+    line-height: 1.45; margin-top: 7mm; max-width: 172mm;
+    text-shadow: 0 .4mm 2.4mm rgba(0,20,40,.5);
+  }
+  .sub b { color: #fff; font-weight: 700; }
+
+  .chips { display: flex; gap: 4mm; list-style: none; margin-top: 13mm; }
+  .chips li {
+    align-items: center; background: rgba(255,255,255,.14);
+    border: .3mm solid rgba(255,255,255,.34); border-radius: 3mm;
+    color: #fff; display: flex; font-size: 11.5pt; font-weight: 600; gap: 3mm;
+    padding: 4mm 5mm;
+  }
+  .chips li:before {
+    align-items: center; background: #fff; border-radius: 50%; color: var(--blue);
+    content: "✓"; display: flex; font-size: 10pt; font-weight: 800;
+    height: 7mm; justify-content: center; width: 7mm;
+  }
+
+  /* Bloco de CTA */
+  .cta {
+    align-items: center; background: #fff; border-radius: 5mm; color: var(--navy);
+    display: flex; gap: 7mm; margin-top: auto; padding: 7mm;
+  }
+  .cta .qr { background: var(--cyan-soft); border-radius: 3mm; padding: 3mm; width: 42mm; }
+  .cta .cta-title { font-size: 17pt; font-weight: 700; letter-spacing: -.01em; }
+  .cta .cta-text { color: var(--muted); font-size: 11pt; font-weight: 500; margin-top: 1.5mm; }
+  .cta .url { color: var(--blue); font-size: 26pt; font-weight: 800; letter-spacing: -.02em; margin-top: 3mm; }
+
+  footer {
+    align-items: center; border-top: .3mm solid rgba(255,255,255,.3);
+    color: rgba(255,255,255,.82); display: flex; font-size: 9.5pt;
+    font-weight: 500; justify-content: space-between; margin-top: 7mm; padding-top: 6mm;
+  }
+</style>
+</head>
+<body>
+<div class="sheet sheet--a4 pad-a4">
+  <div class="photo-full"><img src="assets/aplicacao-09.png" alt="Família reunida no sofá"></div>
+  <img class="bg-symbol" src="assets/LOGO_SIMBOLO_01.png" alt="" aria-hidden="true">
+
+  <header>
+    <img class="logo" src="assets/LOGO_TIPO_01.png" alt="Imóvel Central">
+    <span class="pill">Assis e região</span>
+  </header>
+
+  <div class="hero">
+    <p class="kicker">Hub imobiliário regional</p>
+    <h1>Seu lar ideal está <em>a alguns cliques de distância!</em></h1>
+    <p class="sub">
+      Encontre casas, apartamentos, terrenos, pontos comerciais e muito mais para comprar ou alugar — tudo isso <b>de forma gratuita</b> e sem precisar ficar andando por aí.
+    </p>
+    <ul class="chips">
+      <li>Buscar por bairro e mapa</li>
+      <li>Dados organizados por bairro</li>
+      <li>Contato direto com a imobiliária</li>
+    </ul>
+  </div>
+
+  <div class="cta">
+    <img class="qr" src="assets/qr-navy.svg" alt="QR Code">
+    <div>
+      <p class="cta-title">Aponte a câmera e comece a buscar</p>
+      <p class="cta-text">Mais de 4.000 anúncios em Assis, Tarumã, Cândido Mota, Palmital e Paraguaçu. Estamos só começando.</p>
+      <p class="url">imovelcentral.com.br</p>
+    </div>
+  </div>
+
+  <footer>
+    <span>Imóvel Central · Hub Inteligente de Negócios Imobiliários</span>
+    <span>contato@imovelcentral.com.br</span>
+  </footer>
+</div>
+</body>
+</html>

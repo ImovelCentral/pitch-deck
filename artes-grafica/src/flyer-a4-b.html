@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Flyer A4 — Direção B (Clean)</title>
+<link rel="stylesheet" href="print.css">
+<style>
+  .sheet--a4 {
+    background: #fff; color: var(--ink); display: flex; flex-direction: column;
+    isolation: isolate;
+  }
+
+  /* Faixa superior navy full-bleed com a marca */
+  .sheet--a4 .topband {
+    background: var(--navy); height: 46mm; left: 0; padding: 8mm 8mm 0;
+    position: absolute; right: 0; top: 0; z-index: -1;
+  }
+  .sheet--a4 .topband:after {
+    background: var(--cyan); bottom: -3mm; content: ""; height: 3mm; left: 0;
+    position: absolute; right: 0;
+  }
+  /* Símbolo em bloco de destaque à direita */
+  .sheet--a4 .symbol-block {
+    align-items: center; background: var(--cyan-soft); border-radius: 6mm;
+    display: flex; height: 74mm; justify-content: center; position: absolute;
+    right: 8mm; top: 62mm; width: 74mm;
+  }
+  .sheet--a4 .symbol-block img { height: 46mm; width: auto; }
+  .sheet--a4 .symbol-block:after {
+    border: .8mm solid var(--cyan); border-radius: 50%; content: "";
+    height: 64mm; position: absolute; width: 64mm;
+  }
+
+  header { align-items: center; display: flex; justify-content: space-between; }
+  header .logo { height: 12mm; width: auto; }
+  header .pill { background: rgba(255,255,255,.14); border: .4mm solid rgba(255,255,255,.5); color: #fff; }
+
+  .hero { margin-top: 38mm; max-width: 118mm; }
+  .kicker { color: var(--blue); font-size: 10pt; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+  h1 {
+    color: var(--navy); font-size: 41pt; font-weight: 800; letter-spacing: -.02em;
+    line-height: 1.05; margin-top: 5mm;
+  }
+  h1 em { color: var(--blue); font-style: normal; }
+  .sub { color: var(--muted); font-size: 15pt; font-weight: 400; line-height: 1.5; margin-top: 7mm; }
+  .sub b { color: var(--navy); font-weight: 700; }
+
+  .stats { display: flex; gap: 10mm; margin-top: 9mm; }
+  .stats div { border-left: 1mm solid var(--cyan); padding-left: 4mm; }
+  .stats b { color: var(--navy); display: block; font-size: 22pt; font-weight: 800; letter-spacing: -.02em; }
+  .stats span { color: var(--muted); font-size: 9.5pt; font-weight: 500; }
+
+  /* Faixa de benefícios */
+  .benefits {
+    display: grid; gap: 4mm; grid-template-columns: repeat(3, 1fr); list-style: none;
+    margin-top: auto;
+  }
+  .benefits li {
+    background: var(--soft); border: .3mm solid var(--line); border-radius: 3.5mm;
+    color: var(--navy); font-size: 11pt; font-weight: 600; line-height: 1.3; padding: 5mm;
+  }
+  .benefits li:before {
+    background: var(--blue); border-radius: 50%; color: #fff; content: "✓";
+    display: flex; font-size: 9pt; font-weight: 800; height: 6mm;
+    justify-content: center; align-items: center; margin-bottom: 3mm; width: 6mm;
+  }
+
+  /* CTA */
+  .cta {
+    align-items: center; background: var(--navy); border-radius: 5mm; color: #fff;
+    display: flex; gap: 7mm; margin-top: 7mm; padding: 7mm;
+  }
+  .cta .qr { background: #fff; border-radius: 3mm; padding: 3mm; width: 40mm; }
+  .cta .cta-title { font-size: 16pt; font-weight: 700; }
+  .cta .cta-text { color: rgba(255,255,255,.75); font-size: 10.5pt; font-weight: 400; margin-top: 1mm; }
+  .cta .url { color: var(--cyan); font-size: 25pt; font-weight: 800; letter-spacing: -.02em; margin-top: 2mm; }
+
+  footer {
+    color: var(--muted); display: flex; font-size: 9.5pt; font-weight: 500;
+    justify-content: space-between; margin-top: 6mm;
+  }
+</style>
+</head>
+<body>
+<div class="sheet sheet--a4 pad-a4">
+  <div class="topband"></div>
+
+  <header>
+    <img class="logo" src="assets/LOGO_TIPO_01.png" alt="Imóvel Central">
+    <span class="pill">Assis e região</span>
+  </header>
+
+  <div class="symbol-block">
+    <img src="assets/LOGO_SIMBOLO_05.png" alt="">
+  </div>
+
+  <div class="hero">
+    <p class="kicker">Hub imobiliário regional</p>
+    <h1>Todos os imóveis da região <em>em um só lugar.</em></h1>
+    <p class="sub">
+      Casas, apartamentos, terrenos e muito mais para comprar ou alugar,
+      com <b>mais de 4.000 anúncios</b> centralizados.
+    </p>
+    <div class="stats">
+      <div><b>4.000+</b><span>anúncios</span></div>
+      <div><b>15</b><span>imobiliárias</span></div>
+      <div><b>5</b><span>cidades</span></div>
+    </div>
+  </div>
+
+  <ul class="benefits">
+    <li>Busca por bairro e mapa da região</li>
+    <li>Dados padronizados por bairro</li>
+    <li>Contato direto com a imobiliária</li>
+  </ul>
+
+  <div class="cta">
+    <img class="qr" src="assets/qr-navy.svg" alt="QR Code">
+    <div>
+      <p class="cta-title">Aponte a câmera e comece a buscar</p>
+      <p class="cta-text">Mais de 4.000 anúncios em Assis, Tarumã, Cândido Mota, Palmital e Paraguaçu</p>
+      <p class="url">imovelcentral.com.br</p>
+    </div>
+  </div>
+
+  <footer>
+    <span>Imóvel Central · Hub Inteligente de Negócios Imobiliários</span>
+    <span>contato@imovelcentral.com.br</span>
+  </footer>
+</div>
+</body>
+</html>

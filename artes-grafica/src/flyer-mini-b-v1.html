@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Flyer 10×15 — Direção B (Clean)</title>
+<link rel="stylesheet" href="print.css">
+<style>
+  .sheet--mini {
+    background: #fff; color: var(--ink); display: flex; flex-direction: column;
+    isolation: isolate;
+  }
+  .sheet--mini .topband {
+    background: var(--navy); height: 26mm; left: 0; padding: 7mm 7mm 0;
+    position: absolute; right: 0; top: 0; z-index: -1;
+  }
+  .sheet--mini .topband:after {
+    background: var(--cyan); bottom: -2mm; content: ""; height: 2mm; left: 0;
+    position: absolute; right: 0;
+  }
+  .sheet--mini .symbol-dot {
+    align-items: center; background: var(--cyan-soft); border-radius: 50%;
+    display: flex; height: 22mm; justify-content: center; position: absolute;
+    right: 7mm; top: 36mm; width: 22mm;
+  }
+  .sheet--mini .symbol-dot img { height: 13mm; width: auto; }
+
+  header { align-items: center; display: flex; justify-content: space-between; }
+  header .logo { height: 7.5mm; width: auto; }
+  header .pill { background: rgba(255,255,255,.14); border: .35mm solid rgba(255,255,255,.5); color: #fff; font-size: 5.5pt; padding: 1.2mm 3mm; }
+
+  .hero { margin-top: 20mm; max-width: 62mm; }
+  .kicker { color: var(--blue); font-size: 6pt; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+  h1 { color: var(--navy); font-size: 22pt; font-weight: 800; letter-spacing: -.02em; line-height: 1.06; margin-top: 2.5mm; }
+  h1 em { color: var(--blue); font-style: normal; }
+  .sub { color: var(--muted); font-size: 8pt; font-weight: 400; line-height: 1.45; margin-top: 3.5mm; }
+  .sub b { color: var(--navy); font-weight: 700; }
+
+  .stats { display: flex; gap: 6mm; margin-top: 5mm; }
+  .stats div { border-left: .8mm solid var(--cyan); padding-left: 2.5mm; }
+  .stats b { color: var(--navy); display: block; font-size: 13pt; font-weight: 800; letter-spacing: -.02em; }
+  .stats span { color: var(--muted); font-size: 6pt; font-weight: 500; }
+
+  .benefits { list-style: none; margin-top: auto; }
+  .benefits li {
+    align-items: center; background: var(--soft); border: .3mm solid var(--line);
+    border-radius: 2.5mm; color: var(--navy); display: flex; font-size: 7.5pt;
+    font-weight: 600; gap: 2.5mm; margin-top: 2mm; padding: 2.5mm 3.5mm;
+  }
+  .benefits li:before {
+    align-items: center; background: var(--blue); border-radius: 50%; color: #fff;
+    content: "✓"; display: flex; font-size: 5.5pt; font-weight: 800;
+    height: 4.2mm; justify-content: center; width: 4.2mm;
+  }
+
+  .cta {
+    align-items: center; background: var(--navy); border-radius: 3.5mm; color: #fff;
+    display: flex; gap: 4mm; margin-top: 4mm; padding: 4mm;
+  }
+  .cta .qr { background: #fff; border-radius: 2mm; padding: 2mm; width: 23mm; }
+  .cta .cta-title { font-size: 8pt; font-weight: 700; line-height: 1.2; }
+  .cta .url { color: var(--cyan); font-size: 12.5pt; font-weight: 800; letter-spacing: -.02em; margin-top: 1.5mm; }
+
+  footer { color: var(--muted); font-size: 6pt; font-weight: 500; margin-top: 3.5mm; text-align: center; }
+</style>
+</head>
+<body>
+<div class="sheet sheet--mini pad-mini">
+  <div class="topband"></div>
+
+  <header>
+    <img class="logo" src="assets/LOGO_TIPO_01.png" alt="Imóvel Central">
+    <span class="pill">Assis e região</span>
+  </header>
+
+  <div class="symbol-dot">
+    <img src="assets/LOGO_SIMBOLO_05.png" alt="">
+  </div>
+
+  <div class="hero">
+    <p class="kicker">Hub imobiliário regional</p>
+    <h1>Sua casa nova esta aqui no <em>Imovel Central</em></h1>
+      <p class="sub">
+        Você não precisa mais procurar em todo lugar.
+      </p>
+  </div>
+
+  <ul class="benefits">
+    <li>Busque por bairro e mapa e compare</li>
+    <li>Contato direto com a imobiliária ou proprietário</li>
+    <li>+ 4000 anúncios em Assis e região em um só lugar</li>
+  </ul>
+
+  <div class="cta">
+    <img class="qr" src="assets/qr-navy.svg" alt="QR Code">
+    <div>
+      <p class="cta-title">Aponte a câmera e comece a buscar</p>
+      <p class="url">imovelcentral.com.br</p>
+    </div>
+  </div>
+
+  <footer>Imóvel Central · Hub Inteligente de Negócios Imobiliários</footer>
+</div>
+</body>
+</html>
