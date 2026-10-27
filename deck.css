@@ -6,6 +6,7 @@
   --ic-soft: #f2f8fb;
   --ic-line: #dcecf3;
   --ic-green: #1c9b76;
+  --ic-blue-deep: #0077a8;
   --ic-table-ink: #3f4f58;
   --ic-table-strong: #33454e;
   /* Híbrido tipográfico: Poppins (fonte oficial da marca) nos títulos e números;
@@ -66,6 +67,8 @@
 /* Experiência do cliente e do parceiro: dois cartões com ícone, micro-rótulo
    e lista de checagem. */
 .experience-grid { display: grid; gap: 18px; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 4px; }
+.experience-grid .experience-list,
+.versus .versus-list { display: block; margin: 0; padding: 0; width: 100%; }
 .experience-card { background: #f6fafc; border: 1px solid #e4f1f6; border-radius: 14px; box-shadow: 0 8px 24px rgba(16, 34, 44, .04); padding: 20px 22px; }
 .experience-head { align-items: center; display: flex; gap: 12px; margin-bottom: 12px; }
 .experience-icon { align-items: center; background: var(--ic-blue); border-radius: 50%; color: #fff; display: flex; flex: 0 0 auto; height: 38px; justify-content: center; width: 38px; }
@@ -76,6 +79,28 @@
 .experience-list li { align-items: flex-start; border-bottom: 1px solid #e8f3f8; color: var(--ic-ink); display: flex; font-size: .48em; gap: 10px; line-height: 1.45; margin: 0; padding: 9px 0; }
 .experience-list li:last-child { border-bottom: 0; padding-bottom: 0; }
 .experience-list li:before { align-items: center; background: rgba(0, 174, 239, .12); border-radius: 50%; color: var(--ic-blue); content: "✓"; display: flex; flex: 0 0 20px; font-family: var(--ic-font-display); font-size: .85em; font-weight: 700; height: 20px; justify-content: center; line-height: 1; margin-top: 2px; width: 20px; }
+
+/* Comparativo em dois cartões, com selo central. */
+.versus { display: grid; gap: 52px; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 6px; position: relative; }
+.versus-card { background: #f7fafb; border: 1px solid #e4f1f6; border-radius: 16px; border-top: 3px solid #dfe8ec; padding: 18px 20px 16px; }
+.versus-card--us { background: #f1fbff; border-color: #cdeef9; border-top-color: var(--ic-blue); box-shadow: 0 12px 28px rgba(0, 174, 239, .08); }
+.versus-head { align-items: center; border-bottom: 1px solid #e4f1f6; display: flex; gap: 12px; margin-bottom: 2px; padding-bottom: 12px; }
+.versus-card--us .versus-head { border-bottom-color: #cdeef9; }
+.versus-icon { align-items: center; border-radius: 50%; display: flex; flex: 0 0 auto; height: 34px; justify-content: center; width: 34px; }
+.versus-icon svg { display: block; height: 17px; width: 17px; }
+.versus-icon--them { background: #e7eef2; color: #728089; }
+.versus-icon--us { background: var(--ic-blue); color: #fff; }
+.versus-eyebrow { color: var(--ic-muted); display: block; font-family: var(--ic-font-display); font-size: .34em; font-weight: 700; letter-spacing: .08em; margin-bottom: 3px; text-transform: uppercase; }
+.versus-card--us .versus-eyebrow { color: var(--ic-blue); }
+.versus-card h3 { font-size: .64em; margin: 0; }
+.versus-list { list-style: none; margin: 0; padding: 0; }
+.versus-list li { align-items: baseline; border-bottom: 1px solid #e8f1f5; display: flex; font-size: .42em; gap: 10px; justify-content: space-between; line-height: 1.4; padding: 10px 0; }
+.versus-list li:last-child { border-bottom: 0; padding-bottom: 0; }
+.versus-criterion { color: var(--ic-muted); flex-shrink: 0; font-size: 1em; font-weight: 600; white-space: nowrap; }
+.versus-value { color: #8a979e; font-family: var(--ic-font-display); font-size: 1em; font-weight: 500; text-align: right; }
+.versus-card--us .versus-list li { border-bottom-color: #dcf2fa; }
+.versus-card--us .versus-value { color: var(--ic-blue-deep); font-weight: 600; }
+.versus-badge { align-items: center; background: var(--ic-blue); border: 4px solid #fff; border-radius: 50%; box-sizing: border-box; box-shadow: 0 8px 20px rgba(0, 174, 239, .32); color: #fff; display: flex; font-family: var(--ic-font-display); font-size: .36em; font-weight: 700; height: 48px; justify-content: center; left: 50%; letter-spacing: .04em; position: absolute; top: 50%; transform: translate(-50%, -50%); width: 48px; z-index: 2; }
 
 /* Matriz comparativa: cabeçalho leve, linhas hairline e uma única coluna
    em destaque. Sem zebra, sem hover e sem pills — o contraste vem da coluna,
@@ -238,6 +263,15 @@ html.mobile-layout .experience-eyebrow { display: none; }
 html.mobile-layout .experience-card h3 { font-size: .46em; }
 html.mobile-layout .partner-product .experience-list li { font-size: .36em; gap: 8px; line-height: 1.32; padding: 4px 0; }
 html.mobile-layout .partner-product .experience-list li:before { flex-basis: 15px; height: 15px; margin-top: 1px; width: 15px; }
+html.mobile-layout .versus { gap: 10px; grid-template-columns: 1fr; }
+html.mobile-layout .versus-badge { display: none; }
+html.mobile-layout .versus-card { padding: 12px 14px; }
+html.mobile-layout .versus-head { gap: 10px; padding-bottom: 8px; }
+html.mobile-layout .versus-icon { height: 30px; width: 30px; }
+html.mobile-layout .versus-icon svg { height: 15px; width: 15px; }
+html.mobile-layout .versus-eyebrow { font-size: .3em; }
+html.mobile-layout .versus-card h3 { font-size: .5em; }
+html.mobile-layout .versus .versus-list li { font-size: .38em; gap: 8px; line-height: 1.3; padding: 5px 0; }
 html.mobile-layout .card { padding: 11px 13px; }
 html.mobile-layout .card .icon { font-size: .42em; height: 22px; margin-bottom: 7px; width: 22px; }
 html.mobile-layout .card .number { font-size: .75em; margin-bottom: 4px; }

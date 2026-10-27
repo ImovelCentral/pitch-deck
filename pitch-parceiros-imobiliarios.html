@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/white.min.css">
   <link rel="stylesheet" href="fonts.css">
-  <link rel="stylesheet" href="deck.css?v=20261027-19">
+  <link rel="stylesheet" href="deck.css?v=20261027-27">
 </head>
 <body>
   <a class="back-home" href="index.html" title="Voltar para a apresentação inicial">← Apresentação inicial</a>
@@ -108,16 +108,38 @@
     <section class="dense">
       <div class="brand">Por que local</div>
       <h2>Um portal nacional não reproduz o regional.</h2>
-      <div class="table-panel table-panel--matrix">
-        <table class="comparison comparison--matrix">
-          <thead><tr><th></th><th>Portais nacionais</th><th class="is-key">Imóvel Central</th></tr></thead>
-          <tbody>
-            <tr><td>Foco nas cidades médias</td><td class="na" data-label="Portais nacionais">Genérico</td><td class="yes is-key" data-label="Imóvel Central">✓ Estratégico</td></tr>
-            <tr><td>Inteligência de mercado local</td><td class="na" data-label="Portais nacionais">Limitada</td><td class="yes is-key" data-label="Imóvel Central">✓ Construída com parceiros</td></tr>
-            <tr><td>Proximidade com profissionais</td><td class="na" data-label="Portais nacionais">Escala nacional</td><td class="yes is-key" data-label="Imóvel Central">✓ Operação regional</td></tr>
-            <tr><td>Ferramentas alinhadas à operação local</td><td class="na" data-label="Portais nacionais">Padronizadas</td><td class="yes is-key" data-label="Imóvel Central">✓ Evolução orientada por uso</td></tr>
-          </tbody>
-        </table>
+      <div class="versus">
+        <article class="versus-card versus-card--them">
+          <div class="versus-head">
+            <div class="versus-icon versus-icon--them" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3Z"/></svg></div>
+            <div>
+              <span class="versus-eyebrow">Mercado nacional</span>
+              <h3>Portais nacionais</h3>
+            </div>
+          </div>
+          <ul class="versus-list">
+            <li><span class="versus-criterion">Foco regional</span><span class="versus-value">Genérico</span></li>
+            <li><span class="versus-criterion">Inteligência local</span><span class="versus-value">Limitada</span></li>
+            <li><span class="versus-criterion">Proximidade</span><span class="versus-value">Escala nacional</span></li>
+            <li><span class="versus-criterion">Ferramentas</span><span class="versus-value">Padronizadas</span></li>
+          </ul>
+        </article>
+        <span class="versus-badge" aria-hidden="true">VS</span>
+        <article class="versus-card versus-card--us">
+          <div class="versus-head">
+            <div class="versus-icon versus-icon--us" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.5 7-12a7 7 0 1 0-14 0c0 6.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+            <div>
+              <span class="versus-eyebrow">Operação regional</span>
+              <h3>Imóvel Central</h3>
+            </div>
+          </div>
+          <ul class="versus-list">
+            <li><span class="versus-criterion">Foco regional</span><span class="versus-value">Estratégico</span></li>
+            <li><span class="versus-criterion">Inteligência local</span><span class="versus-value">Construída com parceiros</span></li>
+            <li><span class="versus-criterion">Proximidade</span><span class="versus-value">Operação regional</span></li>
+            <li><span class="versus-criterion">Ferramentas</span><span class="versus-value">Evolução orientada por uso</span></li>
+          </ul>
+        </article>
       </div>
       <p class="statement">Nossa tese: a melhor experiência regional é construída com quem já move o mercado todos os dias.</p>
     </section>
