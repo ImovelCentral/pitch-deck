@@ -27,6 +27,8 @@ const PIECES = [
   /* A4 com foto (Aplicação_09) — fundo inteiro × 2 direções */
   { id: "foto2", file: "flyer-a4-foto2-a.html", dir: "a", w: 216, h: 303, name: "flyer-a4-210x297-foto2-fundoInteiro" },
   { id: "foto2", file: "flyer-a4-foto2-b.html", dir: "b", w: 216, h: 303, name: "flyer-a4-210x297-foto2-fundoInteiro" },
+  /* 10×15 com a mesma foto de fundo do A4 foto2-B */
+  { id: "foto2-mini", file: "flyer-mini-foto2-a.html", dir: "a", w: 106, h: 156, name: "flyer-10x15-100x150-foto2" },
 ];
 
 module.exports = { SRC, ASSETS, PREVIEW, OUT, CHROME, PIECES };

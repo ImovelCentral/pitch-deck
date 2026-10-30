@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Flyer 10×15 — Foto · Fundo inteiro (Mini A)</title>
+<link rel="stylesheet" href="print.css">
+<style>
+  .sheet--mini {
+    background: var(--navy); color: #fff; display: flex; flex-direction: column;
+    isolation: isolate;
+  }
+
+  /* Foto sangrando a folha inteira */
+  .photo-full {
+    inset: 0; overflow: hidden; position: absolute; z-index: -2;
+  }
+  .photo-full img {
+    /* Mesmo recorte do A4 foto2-B: colagem dividida em duas fotos, aqui
+       usamos a família da ESQUERDA (mãe, filha e pai no sofá).
+       A imagem ocupa 2× a largura da folha, deslocada para a esquerda,
+       de modo que só a metade esquerda apareça. */
+    height: 100%; left: 0; object-fit: cover; object-position: 50% 50%;
+    position: absolute; top: 0; width: 200%;
+  }
+  /* Véu azul da direção clean: garante contraste do texto sobre a imagem */
+  .photo-full:after {
+    background: linear-gradient(180deg,
+      rgba(0,64,131,.86) 0%,
+      rgba(0,90,190,.64) 28%,
+      rgba(0,80,170,.68) 58%,
+      rgba(0,64,131,.78) 82%,
+      rgba(0,48,89,.94) 100%);
+    content: ""; inset: 0; position: absolute;
+  }
+
+  /* Marca d'água do símbolo — na faixa livre entre os chips e o CTA,
+     longe dos rostos da família */
+  .sheet--mini .bg-symbol {
+    bottom: 58mm; height: 95mm; opacity: .07; right: -22mm; width: 95mm; z-index: -1;
+  }
+
+  header { align-items: center; display: flex; justify-content: space-between; }
+  header .logo { height: 7.5mm; width: auto; }
+  .pill { background: rgba(255,255,255,.16); border: .35mm solid rgba(255,255,255,.55); color: #fff; font-size: 5.5pt; padding: 1.2mm 3mm; }
+
+  .kicker {
+    color: #8FD8FF; font-size: 6.5pt; font-weight: 700; letter-spacing: .18em;
+    margin-top: 9mm; text-transform: uppercase;
+  }
+  h1 {
+    font-size: 23pt; font-weight: 800; letter-spacing: -.02em; line-height: 1.06;
+    margin-top: 3mm;
+    text-shadow: 0 .5mm 2mm rgba(0,20,40,.5);
+  }
+  h1 em { color: #8FD8FF; font-style: normal; }
+
+  .sub {
+    color: rgba(255,255,255,.9); font-size: 8.5pt; font-weight: 300;
+    line-height: 1.45; margin-top: 4mm;
+    text-shadow: 0 .3mm 1.6mm rgba(0,20,40,.55);
+  }
+  .sub b { color: #fff; font-weight: 700; }
+
+  .chips { list-style: none; margin-top: 5mm; }
+  .chips li {
+    align-items: center; background: rgba(0,30,58,.45); border: .25mm solid rgba(255,255,255,.28);
+    border-radius: 2mm; display: flex; font-size: 7.5pt; font-weight: 600;
+    gap: 2.5mm; margin-top: 2mm; padding: 1.2mm 2.5mm;
+  }
+  .chips li:before {
+    align-items: center; background: #fff; border-radius: 50%; color: var(--blue);
+    content: "✓"; display: flex; font-size: 6pt; font-weight: 800;
+    height: 4.2mm; justify-content: center; width: 4.2mm;
+  }
+
+  .cta {
+    align-items: center; background: #fff; border-radius: 3.5mm; color: var(--navy);
+    display: flex; gap: 4mm; margin-top: auto; padding: 4mm;
+  }
+  .cta .qr { background: var(--cyan-soft); border-radius: 2mm; padding: 2mm; width: 24mm; }
+  .cta .cta-title { font-size: 8.5pt; font-weight: 700; line-height: 1.2; }
+  .cta .url { color: var(--blue); font-size: 13pt; font-weight: 800; letter-spacing: -.02em; margin-top: 1.5mm; }
+
+  footer { color: rgba(255,255,255,.82); font-size: 6pt; font-weight: 500; margin-top: 4mm; text-align: center; }
+</style>
+</head>
+<body>
+<div class="sheet sheet--mini pad-mini">
+  <div class="photo-full"><img src="assets/aplicacao-09.png" alt="Família reunida no sofá"></div>
+  <img class="bg-symbol" src="assets/LOGO_SIMBOLO_01.png" alt="" aria-hidden="true">
+
+  <header>
+    <img class="logo" src="assets/LOGO_TIPO_01.png" alt="Imóvel Central">
+    <span class="pill">Assis e região</span>
+  </header>
+
+  <p class="kicker">Hub imobiliário regional</p>
+  <h1>Sua casa nova esta aqui no <em>Imovel Central</em></h1>
+  <p class="sub">
+    Você não precisa mais procurar em todo lugar. Casas, apartamentos e terrenos para comprar ou alugar em Assis e região. 
+
+  <ul class="chips">
+    <li>Busque por bairro e mapa</li>
+    <li>Compare os imóveis</li>
+    <li>Contato direto com a imobiliária ou proprietário</li>
+    <li>+ 4000 anúncios em Assis e região em um só lugar</li>
+  </ul>
+
+  <div class="cta">
+    <img class="qr" src="assets/qr-navy.svg" alt="QR Code">
+    <div>
+      <p class="cta-title">Aponte a câmera e comece a buscar</p>
+      <p class="url">imovelcentral.com.br</p>
+    </div>
+  </div>
+
+  <footer>Imóvel Central · Hub Inteligente de Negócios Imobiliários</footer>
+</div>
+</body>
+</html>
