@@ -15,6 +15,8 @@ Browse the skills bundled with this project.
 | [image-ai-generator](./image-ai-generator/) | script | Generate AI images via Openrouter API. Test mode (cheap) and production mode (high-quality). Supports reference images for brand consistency. | `OPENROUTER_API_KEY` | Bundled |
 | [imovelcentral-flyers](./imovelcentral-flyers/) | prompt | Cria e altera flyers do Imóvel Central (A4 e 10×15) em HTML pronto para gráfica, nas direções A (navy) e B (clean). Só edita HTML; gera PDF apenas quando solicitado. | _(none)_ | Project |
 | [imovelcentral-cartoes](./imovelcentral-cartoes/) | prompt | Cria e altera cartões de visita 9×5 do Imóvel Central (frente/verso) em HTML pronto para gráfica, nas direções A e B. Só edita HTML; gera PDF apenas quando solicitado. | _(none)_ | Project |
+| [video-creator](./video-creator/) | prompt | Enquadra e planeja vídeos de divulgação de 15–25s a partir de uma URL do produto. Pergunta URL e rotas a cada vídeo, escreve `brief.md` e `storyboard.md` em `video/src/<slug>/` e só então aciona o render. | _(none)_ | Project |
+| [brag-video](./brag-video/) | hybrid | Executa o vídeo de um slug aprovado com `/brag` + Hyperframes. Valida WSL/Node ≥22/ffmpeg, captura múltiplas rotas com reuso por manifest e grava em `video/out/<slug>/`. | _(none)_ | Project |
 
 ## Skill Types
 
@@ -47,6 +49,10 @@ skills/
   imovelcentral-flyers/
     SKILL.md
   imovelcentral-cartoes/
+    SKILL.md
+  video-creator/
+    SKILL.md
+  brag-video/
     SKILL.md
 ```
 

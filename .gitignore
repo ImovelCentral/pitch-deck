@@ -5,3 +5,8 @@ node_modules/
 artes-grafica/preview/
 artes-grafica/out/
 artes-grafica/node_modules/
+
+# Saídas do pipeline de vídeo (geradas por brag-video via /brag + Hyperframes)
+video/out/
+# Pastas temporárias do /brag — devem ser movidas para video/out/<slug>/
+brag-output*/
