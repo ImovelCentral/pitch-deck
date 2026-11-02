@@ -73,7 +73,7 @@ Direção B usa o gradiente de véu azul e `#8FD8FF` como acento de título/kick
 **Header** — logo à esquerda, pill à direita.
 ```html
 <header>
-  <img class="logo" src="assets/LOGO_TIPO_01.png" alt="Imóvel Central">
+  <img class="logo" src="assets/logo/LOGO_TIPO_01.png" alt="Imóvel Central">
   <span class="pill">Assis e região</span>
 </header>
 ```
@@ -144,7 +144,7 @@ O caso mais delicado. A ordem das camadas e o recorte definem o resultado.
 }
 ```
 
-**Colagem com duas famílias** (`assets/aplicacao-09.png`, 1920×1080, duas fotos lado a lado): escolher uma metade exige escalar, porque `object-fit` só recorta ~6% numa folha 216×303. Metade esquerda:
+**Colagem com duas famílias** (`assets/app/app-09.png`, 1920×1080, duas fotos lado a lado): escolher uma metade exige escalar, porque `object-fit` só recorta ~6% numa folha 216×303. Metade esquerda:
 
 ```css
 .photo-full { overflow: hidden; }                 /* clipa o excesso */
@@ -166,11 +166,11 @@ Para a metade direita, use `width: 100%` com `object-position: 100% 50%` (padrã
 
 ## Ativos
 
-Em `artes-grafica/src/assets/` (ASCII):
-- `LOGO_TIPO_01.png` — logo tipográfica horizontal; `_04` e `_05` são variantes para fundo claro.
-- `LOGO_SIMBOLO_01.png` — símbolo casa+localização para marca d'água; `_04` e `_05` alternativas.
-- `qr-navy.svg` (fundo claro), `qr-white.svg` (fundo escuro), `qr-blue.svg`.
-- `aplicacao-09.png` — colagem de duas famílias para A4 com foto.
+Em `artes-grafica/src/assets/` (ASCII), por subpasta:
+- `logo/LOGO_TIPO_01.png` — logo tipográfica horizontal; `_04` e `_05` são variantes para fundo claro.
+- `logo/LOGO_SIMBOLO_01.png` — símbolo casa+localização para marca d'água; `_04` e `_05` alternativas.
+- `qr/qr-navy.svg` (fundo claro), `qr/qr-white.svg` (fundo escuro), `qr/qr-blue.svg`.
+- `../../../assets/app/app-09.png` — colagem de duas famílias para A4 com foto (fonte única em `assets/app/`, não copiar).
 
 QR sempre em `<img>` com `alt="QR Code"`, envolvido em fundo `--cyan-soft` com padding ≥3mm — margem de silêncio obrigatória para leitura.
 
@@ -201,6 +201,7 @@ Somente após o usuário confirmar que os HTMLs estão aprovados:
 
 ```bash
 cd artes-grafica
+npm install         # só na primeira vez (deps ficam em artes-grafica/)
 node qa.js all      # overflow + QR escaneável de todas as peças
 node render.js all  # previews 150dpi + PDFs com sangria
 ```

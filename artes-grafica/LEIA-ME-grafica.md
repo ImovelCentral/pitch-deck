@@ -18,7 +18,7 @@ Todos em `artes-grafica/out/`, PDF com **sangria de 3mm**, **sem marcas de corte
 > **Direção A (dirA):** navy premium, fundo escuro, alto contraste.
 > **Direção B (dirB):** clean branco + azul, visual mais leve e informativo.
 >
-> **A4 com foto (foto1/foto2):** foto `assets/Aplicações/Aplicação_09.png`.
+> **A4 com foto (foto1/foto2):** foto `assets/app/app-09.png` (na raiz do repo).
 > `foto1-faixaTopo` = foto sangrando nos ~40% superiores, texto embaixo.
 > `foto2-fundoInteiro` = foto cobrindo a folha com véu navy/azul, texto por cima.
 > Título próprio: "Seu lar ideal está a alguns cliques de distância!".
@@ -83,7 +83,8 @@ node qa.js            # QA: overflow de layout, tamanho dos previews, QR escane�
 ```
 
 Fontes em `artes-grafica/src/*.html` + `print.css`. Constantes/peças em `render-lib.js`.
-Logos copiados de `assets/` para `src/assets/` a cada execução (nomes em ASCII).
+Logos copiados de `assets/brand/logo/` para `src/assets/logo/` a cada execução (nomes em ASCII).
+Dependências (`npm install`) ficam nesta pasta (`artes-grafica/`).
 Previews saem a 150 dpi; PDFs a tamanho exato com sangria de 3mm.
 
 ## Para criar uma nova versão

@@ -18,7 +18,7 @@
 .reveal { font-family: var(--ic-font-text); color: var(--ic-ink); }
 .reveal .slides { counter-reset: pitch-slide; }
 .reveal .slides > section { box-sizing: border-box; padding: 40px; text-align: left; }
-.reveal .slides > section:not(.cover):after { background: url('LOGO_05.png') center / contain no-repeat; content: ""; height: 80px; position: absolute; right: 0; top: 0; width: 80px; }
+.reveal .slides > section:not(.cover):after { background: url('assets/brand/logo/simbolo/logo-05.png') center / contain no-repeat; content: ""; height: 80px; position: absolute; right: 0; top: 0; width: 80px; }
 .reveal .slides > section:not(.cover) { counter-increment: pitch-slide; }
 .content-wrapper { display: block; }
 .reveal h1, .reveal h2, .reveal h3, .reveal p { text-transform: none; }

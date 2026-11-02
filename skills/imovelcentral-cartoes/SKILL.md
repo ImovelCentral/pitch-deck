@@ -115,7 +115,7 @@ Cores por direção: A usa `--muted` no sub/contato, `--navy` no rótulo e `--bl
 
 ## Ativos
 
-`LOGO_TIPO_01.png` (frente), `LOGO_SIMBOLO_01.png` (marca d'água no A, círculo da frente no B), `qr-navy.svg` (verso).
+`logo/LOGO_TIPO_01.png` (frente), `logo/LOGO_SIMBOLO_01.png` (marca d'água no A, círculo da frente no B), `qr/qr-navy.svg` (verso).
 
 ## Fluxo de trabalho
 
@@ -135,6 +135,7 @@ Somente após confirmação dos HTMLs:
 
 ```bash
 cd artes-grafica
+npm install          # só na primeira vez (deps ficam em artes-grafica/)
 node qa.js card      # overflow + QR escaneável
 node render.js card  # PDFs de 2 páginas (frente/verso) com sangria
 ```

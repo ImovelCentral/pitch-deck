@@ -7,20 +7,23 @@ const fs = require("fs");
 const path = require("path");
 const { SRC, ASSETS, PREVIEW, OUT, CHROME, PIECES } = require("./render-lib");
 
-/* Copia os logos oficiais para nomes em ASCII (evita problemas de encoding em file://). */
+/* Copia os logos oficiais (assets/brand/logo) para src/assets/logo com nomes ASCII. */
 function stageAssets() {
-  const sym = path.join(__dirname, "..", "assets", "PNG (SEM FUNDO)", "LOGO SÍMBOLO");
-  const tipo = path.join(__dirname, "..", "assets", "PNG (SEM FUNDO)", "LOGO TIPOGRÁFICA");
+  const brand = path.join(__dirname, "..", "assets", "brand", "logo");
+  const sym = path.join(brand, "simbolo");
+  const tipo = path.join(brand, "tipografica");
+  const dest = path.join(ASSETS, "logo");
+  fs.mkdirSync(dest, { recursive: true });
   const map = [
-    [path.join(sym, "LOGO_01.png"), path.join(ASSETS, "LOGO_SIMBOLO_01.png")],
-    [path.join(sym, "LOGO_04.png"), path.join(ASSETS, "LOGO_SIMBOLO_04.png")],
-    [path.join(sym, "LOGO_05.png"), path.join(ASSETS, "LOGO_SIMBOLO_05.png")],
-    [path.join(tipo, "LOGO TIPOGRÁFICA_01.png"), path.join(ASSETS, "LOGO_TIPO_01.png")],
-    [path.join(tipo, "LOGO TIPOGRÁFICA_04.png"), path.join(ASSETS, "LOGO_TIPO_04.png")],
-    [path.join(tipo, "LOGO TIPOGRÁFICA_05.png"), path.join(ASSETS, "LOGO_TIPO_05.png")],
+    [path.join(sym, "logo-01.png"), path.join(dest, "LOGO_SIMBOLO_01.png")],
+    [path.join(sym, "logo-04.png"), path.join(dest, "LOGO_SIMBOLO_04.png")],
+    [path.join(sym, "logo-05.png"), path.join(dest, "LOGO_SIMBOLO_05.png")],
+    [path.join(tipo, "logo-tipo-01.png"), path.join(dest, "LOGO_TIPO_01.png")],
+    [path.join(tipo, "logo-tipo-04.png"), path.join(dest, "LOGO_TIPO_04.png")],
+    [path.join(tipo, "logo-tipo-05.png"), path.join(dest, "LOGO_TIPO_05.png")],
   ];
   for (const [from, to] of map) fs.copyFileSync(from, to);
-  console.log("✓ logos copiados para artes-grafica/src/assets/");
+  console.log("✓ logos copiados para artes-grafica/src/assets/logo/");
 }
 
 async function main() {
@@ -29,6 +32,8 @@ async function main() {
     process.exit(1);
   }
   const only = (process.argv[2] || "all").toLowerCase();
+  fs.mkdirSync(PREVIEW, { recursive: true });
+  fs.mkdirSync(OUT, { recursive: true });
   stageAssets();
 
   const browser = await puppeteer.launch({
